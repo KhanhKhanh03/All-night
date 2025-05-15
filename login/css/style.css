@@ -1,0 +1,245 @@
+/* Google Fonts - Poppins */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+.container {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #4a90e2 0%, #50e3c2 100%); /* Gradient background */
+    column-gap: 30px;
+}
+
+.form {
+    position: absolute;
+    max-width: 430px;
+    width: 100%;
+    padding: 30px;
+    border-radius: 12px; /* Softer corners */
+    background: #fff;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* Add shadow for depth */
+    transition: all 0.3s ease; /* Smooth transition for hover effects */
+}
+
+.form:hover {
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15); /* Hover shadow effect */
+}
+
+.form.signup {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.forms.show-signup .form.signup {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.forms.show-signup .form.login {
+    opacity: 0;
+    pointer-events: none;
+}
+
+header {
+    font-size: 30px; /* Slightly larger header */
+    font-weight: 600;
+    color: #232836;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+form {
+    margin-top: 30px;
+}
+
+.form .field {
+    position: relative;
+    height: 50px;
+    width: 100%;
+    margin-top: 20px;
+    border-radius: 6px;
+}
+
+.field input,
+.field button {
+    height: 100%;
+    width: 100%;
+    border: none;
+    font-size: 16px;
+    font-weight: 400;
+    border-radius: 6px;
+}
+
+.field input {
+    outline: none;
+    padding: 0 15px;
+    border: 1px solid #CACACA;
+    transition: all 0.3s ease;
+}
+
+.field input:focus {
+    border-color: #0171d3; /* Highlight border on focus */
+    box-shadow: 0 0 8px rgba(1, 113, 211, 0.2); /* Subtle glow on focus */
+}
+
+.eye-icon {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    font-size: 18px;
+    color: #8b8b8b;
+    cursor: pointer;
+    padding: 5px;
+    transition: color 0.3s ease;
+}
+
+.eye-icon:hover {
+    color: #0171d3; /* Change color on hover */
+}
+
+.field button {
+    color: #fff;
+    background: linear-gradient(135deg, #0171d3 0%, #50e3c2 100%); /* Gradient button */
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.field button:hover {
+    background: linear-gradient(135deg, #016dcb 0%, #48d1b8 100%); /* Darker gradient on hover */
+    transform: translateY(-2px); /* Slight lift effect */
+    box-shadow: 0 5px 15px rgba(1, 113, 211, 0.3); /* Shadow on hover */
+}
+
+.form-link {
+    text-align: center;
+    margin-top: 15px; /* More spacing */
+}
+
+.form-link span,
+.form-link a {
+    font-size: 14px;
+    font-weight: 400;
+    color: #232836;
+}
+
+.form a {
+    color: #0171d3;
+    text-decoration: none;
+}
+
+.form-content a:hover {
+    text-decoration: underline;
+    color: #016dcb; /* Darker blue on hover */
+}
+
+.line {
+    position: relative;
+    height: 1px;
+    width: 100%;
+    margin: 36px 0;
+    background-color: #d4d4d4;
+}
+
+.line::before {
+    content: 'Or';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #FFF;
+    color: #8b8b8b;
+    padding: 0 15px;
+}
+
+.media-options a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+    transition: all 0.3s ease;
+}
+
+a.facebook {
+    color: #fff;
+    background: #4267b2;
+    border-radius: 6px; /* Match form field radius */
+}
+
+a.facebook:hover {
+    background: #365899; /* Darker shade on hover */
+    transform: translateY(-2px); /* Lift effect */
+    box-shadow: 0 5px 15px rgba(66, 103, 178, 0.3); /* Shadow on hover */
+}
+
+a.facebook .facebook-icon {
+    height: 28px;
+    width: 28px;
+    color: #0171d3;
+    font-size: 20px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+}
+
+.facebook-icon,
+img.google-img {
+    position: absolute;
+    top: 50%;
+    left: 15px;
+    transform: translateY(-50%);
+}
+
+img.google-img {
+    height: 20px;
+    width: 20px;
+    object-fit: cover;
+}
+
+a.google {
+    border: 1px solid #CACACA;
+    border-radius: 6px; /* Match form field radius */
+    background: #fff;
+}
+
+a.google:hover {
+    border-color: #0171d3; /* Highlight border on hover */
+    transform: translateY(-2px); /* Lift effect */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Shadow on hover */
+}
+
+a.google span {
+    font-weight: 500;
+    opacity: 0.6;
+    color: #232836;
+}
+
+@media screen and (max-width: 400px) {
+    .form {
+        padding: 20px 10px;
+    }
+}
+.close-btn {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    color: red;
+    font-size: 24px;
+    font-weight: bold;
+    text-decoration: none;
+    cursor: pointer;
+    z-index: 1000; /* Đảm bảo nút nằm trên các phần tử khác */
+}
+.close-btn:hover {
+    color: darkred; /* Đổi màu khi lướt chuột qua */
+}

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Danh sách bài học</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+    .lesson-item:hover {
+        transform: scale(1.05);
+        transition: transform 0.3s;
+        cursor: pointer;
+    }
+    .navbar-brand, .nav-link {
+        color: #fff !important;
+    }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+        <a class="navbar-brand" href="#">TechieBot</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav me-auto">
+                <li class="nav-item"><a class="nav-link" href="news-demo.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">ChatBox</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">About</a></li>
+                <li class="nav-item"><a class="nav-link active" href="#">News</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+            </ul>
+            <a href="#" class="btn btn-outline-light">login</a>
+        </div>
+    </div>
+    </nav>
+    <div class="container mt-5">
+        <h2 class="mb-4">Danh sách bài học - <span id="subject-name">Môn học</span></h2>
+        <div class="row" id="lesson-list">
+    <!-- Bài học sẽ được thêm động bằng JavaScript -->
+        </div>
+        <a href="news-demo.html" class="btn btn-primary mt-4">Quay lại danh sách môn học</a>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+    // Dữ liệu bài học
+    const lessonsData = {
+        'nguvan7': [
+            { id: 1, title: 'Bài 1: Văn học trung đại', desc: 'Tìm hiểu văn học trung đại Việt Nam' },
+            { id: 2, title: 'Bài 2: Thơ Đường', desc: 'Phân tích thơ Đường luật' }
+        ],
+        'toan7': [
+            { id: 1, title: 'Bài 1: Đại số cơ bản', desc: 'Khái niệm đại số lớp 7' },
+            { id: 2, title: 'Bài 2: Hình học phẳng', desc: 'Các hình cơ bản trong hình học phẳng' }
+        ]
+    };
+
+    // Tên hiển thị cho các môn
+    const subjectNames = {
+        'nguvan7': 'Ngữ Văn 7',
+        'toan7': 'Toán 7'
+    };
+
+    // Lấy tham số subject từ URL
+    const urlParams = new URLSearchParams(window.location.search);
+    const subject = urlParams.get('subject') || 'unknown';
+
+    // Cập nhật tên môn học
+    document.getElementById('subject-name').textContent = subjectNames[subject] || 'Môn học không xác định';
+
+    // Hiển thị danh sách bài học
+    const lessonList = document.getElementById('lesson-list');
+    const lessons = lessonsData[subject] || [];
+    if (lessons.length === 0) {
+        lessonList.innerHTML = '<p>Không có bài học nào cho môn này.</p>';
+    } else {
+        lessons.forEach(lesson => {
+            const lessonCard = `
+                <div class="col-sm-6 col-lg-4 mb-4">
+                    <a href="lecture.html?subject=${subject}bai${lesson.id}" class="text-decoration-none">
+                        <div class="card lesson-item">
+                            <div class="card-body">
+                                <h5 class="card-title">${lesson.title}</h5>
+                                <p class="card-text">${lesson.desc}</p>
+                                <p><i class="fas fa-book"></i> Bài ${lesson.id}</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            `;
+            lessonList.innerHTML += lessonCard;
+        });
+    }
+    </script>
+    
+</body>
+</html>
