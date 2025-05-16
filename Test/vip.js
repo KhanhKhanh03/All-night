@@ -18,13 +18,13 @@ subscribeButtons.forEach(btn => {
     let qrSrc;
     switch (plan) {
       case 'weekly':
-        qrSrc = 'images/QR2.png';
+        qrSrc = 'Test/images/QR2.png';
         break;
       case 'monthly':
-        qrSrc = 'images/QR3.png';
+        qrSrc = 'Test/images/QR3.png';
         break;
       case 'yearly':
-        qrSrc = 'images/QR4.png';
+        qrSrc = 'Test/images/QR4.png';
         break;
     }
 
