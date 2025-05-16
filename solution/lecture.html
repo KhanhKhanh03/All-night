@@ -163,6 +163,14 @@
         max-height: 200px;
         object-fit: cover;
         }
+        .exercise-image {
+      max-width: 50%;
+      height: auto;
+      display: block;
+      margin: 20px 0;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
 </style>
     </style>
 </head>
@@ -200,6 +208,7 @@
                 <h3>Bài tập</h3>
                 <form class="exercise-form" id="quizForm">
                     <div id="exercise-content">Câu hỏi sẽ hiển thị ở đây.</div>
+                    <img src="images/courses/loicuacay.png" alt="Hình ảnh bài tập" class="exercise-image">
                     <div id="options"></div>
                     <button type="submit" class="btn-submit">Kiểm tra</button>
                 </form>
@@ -230,10 +239,10 @@
 
     const content = {
     'nguvan7bai1': {
-        theory: 'Nội dung lý thuyết: Văn học trung đại Việt Nam.',
-        theoryImg: 'images/courses/nguvan7_bai1.jpg',
-        exercise: 'Câu hỏi: Phân tích bài thơ "Cảnh khuya" của Hồ Chí Minh.',
-        solution: 'Hướng dẫn: Bài thơ thể hiện tình yêu thiên nhiên và lòng yêu nước.'
+        theory: 'Thơ bốn chữ là thể thơ mỗi dòng có bốn chữ, thường có nhịp 2/2. Thơ năm chữ là thể thơ mỗi dòng có năm chữ, thường có nhịp 3/2 hoặc 2/3/. Thơ bốn chữ, năm chữ không hạn chế về số lượng dòng thơ trong một khổ thơ, số khổ thơ trong một bài thơ và thường sử dụng đan xen vần chân với vần lưng. Hình ảnh trong thơ là những chi tiết, cảnh tượng từ thực tế đời sống, được tái hiện bằng ngôn ngữ thơ ca, góp phần diễn tả cảm xúc, suy ngẫm của nhà thơ về thế giới và con người. Vần trong thơ Việt Nam gồm vần chân và vần lưng. Vần chân (hay cước vận) là vần được gieo vào cuối dòng thơ, nghĩa là các tiếng ở cuối dòng vần với nhau. Vần chân là hình thức gieo vần phổ biến nhất trong thơ. Vần lưng (hay yêu vận): là vần được gieo ở giữa dòng thơ, nghĩa là tiếng cuối của dòng trên vần với một tiếng nằm ở giữa dòng dưới hoặc các tiếng trong cùng một dòng thơ hiệp vần với nhau.',
+        theoryImg: 'images/courses/nguvan7_bai1new.jpg',
+        exercise: 'Câu hỏi: Phân tích bài thơ "Lời của cây" của Trần Hữu Thung.',
+        solution: 'Hướng dẫn: Bài thơ “Lời của cây” của Trần Hữu Thung đã thể hiện tình yêu thương, trân trọng những mầm xanh thiên nhiên. Qua đó gửi gắm thông điệp hãy lắng nghe lời của cỏ cây loài vật để biết yêu thương, nâng đỡ sự sống ngay từ khi sự sống ấy mới là những mầm sống; mỗi con người, sự vật, dù là nhỏ bé, đều góp phần tạo nên sự sống như hạt mầm góp màu xanh cho đất trời..'
     },
     'nguvan7bai2': {
         theory: 'Nội dung lý thuyết: Thơ Đường luật và các đặc điểm chính.',

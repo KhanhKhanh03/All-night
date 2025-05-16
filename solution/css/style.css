@@ -48,6 +48,11 @@ body {
   overflow: hidden;
   overflow-y: auto;
   font-family: "OpenSans-Regular";
+  background-image: url('Test/images/background1.jpg'); 
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
 @media (min-width: 1200px) {
