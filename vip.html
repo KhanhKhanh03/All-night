@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <!-- Awesome Fonts CSS -->
+    <link href="css/font-awesome.css" rel="stylesheet" type="text/css" />
+    <!-- Owl Carousel CSS -->
+    <link rel="stylesheet" href="owl-carousel/assets/owl.carousel.min.css" type="text/css" />
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <!-- Google Fonts: Roboto -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="Test/vip.css" />
+    <title>Nạp Xu & Nâng Cấp Tài Khoản - Giải Pháp</title>
+  </head>
+  <body>
+    <!-- Thanh Điều Hướng -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light bg-transparent" id="gtco-main-nav">
+    <div class="container">
+  <a class="navbar-brand d-flex align-items-center" href="#">
+    <img src="solution/images/logo6.png" alt="Logo" style="width: 40px; height: 40px; border-radius: 50%; margin-right: 10px;">
+    TECHIBOT
+  </a>
+
+        <button class="navbar-toggler" data-target="#my-nav" onclick="myFunction(this)" data-toggle="collapse"><span
+                class="bar1"></span> <span class="bar2"></span> <span class="bar3"></span></button>
+        <div id="my-nav" class="collapse navbar-collapse">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item"><a class="nav-link" href="homepage.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="robo.html">AI ChatBot</a></li>
+                <li class="nav-item"><a class="nav-link" href="studynews.html">News</a></li>
+                <li class="nav-item"><a class="nav-link" href="news-demo.html">Courses</a></li>
+                <li class="nav-item"><a class="nav-link" href="personal.html">User</a></li>
+                <li class="nav-item"><a class="nav-link" href="">About Us</a></li>
+                <li class="nav-item"><a class="nav-link" href="">Contact</a></li>
+            </ul>
+            <form class="form-inline my-2 my-lg-0">
+                 <a href="login.html" class="btn btn-info my-2 my-sm-0 text-uppercase">login</a>
+            </form>
+        </div>
+    </div>
+</nav>
+
+    <!-- Phần Nạp Xu -->
+    <div class="container-fluid gtco-banner-area reveal" id="recharge">
+      <div class="container">
+        <h1 class="animate-text upgrade-title" style="text-align: center;"><strong>Nạp Xu</strong></h1>
+        <br />
+        <div class="row">
+          <div class="col-md-6">
+            <div class="coin-box">
+              <h5 style="font-size: 20px;"><strong>Tài Khoản Xu</strong></h5>
+              <p class="animate-text"><strong>Số Xu Hiện Tại:</strong> <span id="current-coins">150</span> Xu</p>
+            </div>
+            <div class="donate-box">
+              <div class="coin-options">
+                <label for="coin-amount"><strong>Chọn Số Xu:</strong></label>
+                <select id="coin-amount" class="form-control mb-2 coin-selector">
+                  <option value="50">50 Xu - 20,000VNĐ</option>
+                  <option value="100">100 Xu - 40,000VNĐ</option>
+                  <option value="200">200 Xu - 60,000VNĐ</option>
+                  <option value="400">400 Xu - 80,000VNĐ</option>
+                </select>
+              </div>
+              <button id="recharge-btn" class="btn btn-primary custom-btn mt-2">Nạp Xu</button>
+            </div>
+            <div class="payment-details" id="payment-details" style="display: none;">
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="account-info">
+                    <h5 style="font-size: 20px;"><strong>Thông Tin Thanh Toán</strong></h5>
+                    <p class="animate-text"><strong>Nơi Nhận:</strong> ALL NIGHT</p>
+                    <p class="animate-text"><strong>Số Tài Khoản:</strong> 0111 04913 2123</p>
+                    <p class="animate-text"><strong>Ngân Hàng:</strong> Vietcombank</p>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="qr-container">
+                    <p>Quét QR để nạp xu:</p>
+                    <img src="Test/images/QR1.png" alt="QR Nạp Xu" class="qr-code" />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="transaction-history">
+              <h5 style="font-size: 20px;"><strong>Lịch Sử Giao Dịch Nạp Xu</strong></h5>
+              <div id="recharge-history">
+                <p class="animate-text"><strong>Huỳnh Nguyên Khánh</strong> - 2025-05-01 10:30:45 - Nạp 100 Xu (40,000VNĐ)</p>
+                <p class="animate-text"><strong>Huỳnh Nguyên Khánh</strong> - 2025-05-03 14:15:22 - Nạp 50 Xu (20,000VNĐ)</p>
+                <p class="animate-text"><strong>Huỳnh Nguyên Khánh</strong> - 2025-05-07 09:20:10 - Nạp 400 Xu (80,000VNĐ)</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Phần Nâng Cấp Tài Khoản -->
+    <div class="container-fluid gtco-upgrade reveal" id="upgrade">
+      <div class="container">
+        <center>
+          <h1 class="animate-text upgrade-title" style="text-align: center;"><strong>Nâng cấp tài khoản</strong></h1>
+          <br />
+          <p class="animate-text">Mở khóa các tính năng cao cấp như khóa học nâng cao và nội dung độc quyền bằng cách nâng cấp tài khoản của bạn.</p>
+        </center>
+        <div class="row">
+          <div class="col-md-12">
+            <div class="payment-details" id="upgrade-payment-details" style="display: none;">
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="account-info">
+                    <h5 style="font-size: 20px;"><strong>Thông Tin Thanh Toán</strong></h5>
+                    <p class="animate-text"><strong>Nơi Nhận:</strong> ALL NIGHT</p>
+                    <p class="animate-text"><strong>Số Tài Khoản:</strong> 0111 13204 9123</p>
+                    <p class="animate-text"><strong>Ngân Hàng:</strong> Vietcombank</p>
+                    <p class="animate-text" id="upgrade-amount"></p>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="qr-container">
+                    <p>Quét QR để nâng cấp tài khoản:</p>
+                    <img id="upgrade-qr-code" src="" alt="QR Nâng Cấp" class="qr-code" />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <br>
+            <div class="upgrade-cards">
+              <div class="upgrade-card">
+                <h3>Kế Hoạch Tuần</h3>
+                <p class="price">19,000VNĐ/tuần</p>
+                <ul>
+                  <li>Sử dụng AI chatbot 50 lần/ngày</li>
+                  <li>Spaces và Group classes</li>
+                  <li>Không giới hạn</li>
+                  <li>Bất cứ khi nào bạn thích</li>
+                </ul>
+                <div class="button-container">
+                  <button class="subscribe-btn" data-plan="weekly" data-price="19,000VNĐ">Đăng Ký Ngay</button>
+                  <img src="Test/images/tiền.png" alt="Tiền" class="upgrade-icon" />
+                </div>
+              </div>
+              <div class="upgrade-card premium">
+                <h3>Kế Hoạch Tháng</h3>
+                <p class="price">49,000VNĐ/tháng</p>
+                <ul>
+                  <li>Sử dụng AI chatbot 200 lần/ngày</li>
+                  <li>Spaces và Group classes</li>
+                  <li>Không giới hạn</li>
+                  <li>Bất cứ khi nào bạn thích</li>
+                </ul>
+                <div class="button-container">
+                  <button class="subscribe-btn" data-plan="monthly" data-price="49,000VNĐ">Đăng Ký Ngay</button>
+                  <img src="Test/images/tiền1.png" alt="Tiền" class="upgrade-icon" />
+                </div>
+              </div>
+              <div class="upgrade-card">
+                <h3>Kế Hoạch Năm</h3>
+                <p class="price">499,000VNĐ/năm</p>
+                <ul>
+                  <li>Sử dụng AI chatbot 1000 lần/ngày</li>
+                  <li>Spaces và Group classes</li>
+                  <li>Không giới hạn</li>
+                  <li>Bất cứ khi nào bạn thích</li>
+                </ul>
+                <div class="button-container">
+                  <button class="subscribe-btn" data-plan="yearly" data-price="499,000VNĐ">Đăng Ký Ngay</button>
+                  <img src="Test/images/tiền.png" alt="Thẻ" class="upgrade-icon" />
+                  <img src="Test/images/gv.png" alt="Người" class="upgrade-icon person" />
+                </div>
+              </div>
+            </div>
+          </div>
+          <br>
+          <div class="col-md-12 mt-4">
+            <div class="transaction-history">
+              <h5 style="font-size: 20px;"><strong>Lịch Sử Giao Dịch Nâng Cấp</strong></h5>
+              <div id="upgrade-history">
+                <p class="animate-text"><strong>Huỳnh Nguyên Khánh</strong> - 2025-04-25 08:45:30 - Kế Hoạch Tuần (19,000VNĐ)</p>
+                <p class="animate-text"><strong>Huỳnh Nguyên Khánh</strong> - 2025-05-02 16:10:55 - Kế Hoạch Tháng (49,000VNĐ)</p>
+                <p class="animate-text"><strong>Huỳnh Nguyên Khánh</strong> - 2025-05-09 11:30:20 - Kế Hoạch Năm (499,000VNĐ)</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Chân Trang -->
+    <footer class="footer-section reveal" id="gtco-footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-3 footer-column">
+            <h3 class="footer-logo">Liên hệ</h3>
+            <p>Đồng hành cùng bạn trên hành trình học tập và phát triển bản thân.</p>
+          </div>
+          <div class="col-md-3 footer-column">
+            <h4>Khám Phá</h4>
+            <ul>
+              <li><a href="#">Trang Chủ</a></li>
+              <li><a href="#">Khóa Học</a></li>
+              <li><a href="#">AI Chat</a></li>
+              <li><a href="#">Tin Tức</a></li>
+            </ul>
+          </div>
+          <div class="col-md-3 footer-column">
+            <h4>Hỗ Trợ</h4>
+            <ul>
+              <li><a href="#">Liên Hệ</a></li>
+              <li><a href="#">Câu Hỏi Thường Gặp</a></li>
+              <li><a href="#">Chính Sách Bảo Mật</a></li>
+              <li><a href="#">Điều Khoản Dịch Vụ</a></li>
+            </ul>
+          </div>
+          <div class="col-md-3 footer-column">
+            <h4>Đăng Ký Nhận Tin</h4>
+            <p>Nhận thông tin cập nhật mới nhất từ chúng tôi.</p>
+            <div class="newsletter-form">
+              <input type="email" placeholder="Nhập email của bạn" />
+              <button class="subscribe-btn">Đăng Ký</button>
+            </div>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>© ALL NIGHT Copyright.</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Nút Chuyển Giao Diện và Kéo Lên Đầu -->
+    <div class="fixed-buttons">
+      <button id="dark-mode-toggle" class="btn btn-secondary custom-btn">Chuyển Giao Diện</button>
+      <a href="#recharge"><button id="scroll-top-btn" class="btn btn-primary custom-btn"><i class="fa fa-arrow-up"></i></button></a>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="js/jquery-3.3.1.slim.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="owl-carousel/owl.carousel.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="Test/vip.js"></script>
+  </body>
+</html>
