@@ -13,11 +13,21 @@
         cursor: pointer;
     }
     .navbar-brand, .nav-link {
+        color: #3d2525 !important;
         color: #fff !important;
     }
     </style>
 </head>
 <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light bg-transparent" id="gtco-main-nav">
+    <div class="container">
+  <a class="navbar-brand d-flex align-items-center" href="#">
+    <img src="images/logo6.png" alt="Logo" style="width: 40px; height: 40px; border-radius: 50%; margin-right: 10px;">
+    TECHIBOT
+  </a>
+
+    </div>
+</nav>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container">
         <a class="navbar-brand" href="#">TechieBot</a>
@@ -48,6 +58,16 @@
     // Dữ liệu bài học
     const lessonsData = {
         'nguvan7': [
+            { id: 1, title: 'Bài 1: Tiếng nói của vạn vật', desc: '(Thơ bốn chữ, năm chữ)' },
+            { id: 2, title: 'Bài 2: Bài học cuộc sống', desc: '(Truyện ngụ ngôn)' },
+            { id: 3, title: 'Bài 3: Những góc nhìn văn chương', desc: 'Nghị luận văn học' },
+            { id: 4, title: 'Bài 4: Quà tặng của thiên nhiên', desc: 'Tản văn, tuỳ bút' },
+            { id: 5, title: 'Bài 5: Từng bước hoàn hiện bản thân', desc: 'Văn bản thông tin' },
+            { id: 6, title: 'Bài 6: Hành trình tri thức', desc: 'Nghị luận xã hội' },
+            { id: 7, title: 'Bài 7: Trí tuệ dân gian', desc: 'Tục ngữ' },
+            { id: 8, title: 'Bài 8: Nét đẹp văn hoá Việt', desc: 'Văn bản thông tin' },
+            { id: 9, title: 'Bài 9: Trong thế giới viễn tưởng', desc: 'Truyện khvt' },
+            { id: 10, title: 'Bài 10: Lắng nghe trái tim mình', desc: 'thơ' },
             { id: 1, title: 'Bài 1: Văn học trung đại', desc: 'Tìm hiểu văn học trung đại Việt Nam' },
             { id: 2, title: 'Bài 2: Thơ Đường', desc: 'Phân tích thơ Đường luật' }
         ],

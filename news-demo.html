@@ -34,7 +34,7 @@
     <!-- Stylesheets -->
     <link rel="stylesheet" href="css/bootstrap.min2.css"/>
     <link rel="stylesheet" href="css/font-awesome.min2.css"/>
-
+    <link rel="stylesheet" href="css/personal.css" />
     <style>
         /* General container */
         .container {
@@ -43,7 +43,6 @@
             margin: 0 auto;
             padding: 0 15px;
         }
-
         /* Section title */
         .section-title {
             text-align: center;
@@ -199,6 +198,7 @@
         }
         
         .text-decoration-none, .text-decoration-none:hover {
+            text-decoration: none 
             text-decoration: none !important;
         }
         .courses__item:hover {
@@ -211,6 +211,29 @@
 
   </head>
   <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light bg-transparent" id="gtco-main-nav">
+    <div class="container">
+  <a class="navbar-brand d-flex align-items-center" href="#">
+    <img src="images/logo6.png" alt="Logo" style="width: 40px; height: 40px; border-radius: 50%; margin-right: 10px;">
+    TECHIBOT
+  </a>
+
+        <button class="navbar-toggler" data-target="#my-nav" onclick="myFunction(this)" data-toggle="collapse"><span
+                class="bar1"></span> <span class="bar2"></span> <span class="bar3"></span></button>
+        <div id="my-nav" class="collapse navbar-collapse">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+                <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                <li class="nav-item"><a class="nav-link" href="#news">News</a></li>
+                <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+            </ul>
+            <form class="form-inline my-2 my-lg-0">
+                 <a href="bestweb design/login/login.html" class="btn btn-info my-2 my-sm-0 text-uppercase">login</a>
+            </form>
+        </div>
+    </div>
+</nav>
     <nav
       class="navbar navbar-expand-lg navbar-light bg-light bg-transparent"
       id="gtco-main-nav"
@@ -478,7 +501,7 @@
                                 <h5>Ngữ văn 10</h5>
                                 <p>Văn học Việt Nam và thế giới</p>
                                 <div class="students">120 Students</div>
-                            </div>
+                          </div>
                             <div class="course-author">
                                 <div class="ca-pic set-bg" data-setbg="images/authors/5.jpg"></div>
                                 <p>Nguyễn Văn A, <span>Giáo viên</span></p>
@@ -573,7 +596,10 @@
       </div>
   </section>
   <!-- Course section end -->
-
+    <div class="fixed-buttons">
+      <button id="dark-mode-toggle" class="btn btn-secondary custom-btn">Chuyển Giao Diện</button>
+      <a href="#profile"><button id="scroll-top-btn" class="btn btn-primary custom-btn"><i class="fa fa-arrow-up"></i></button></a>
+    </div>
   <!-- JavaScript -->
   <script src="js/jquery-3.2.1.min.js"></script>
   <script src="js/bootstrap.min2.js"></script>
@@ -598,5 +624,6 @@
     <!-- owl carousel js-->
     <script src="owl-carousel/owl.carousel.min.js"></script>
     <script src="js/main.js"></script>
+    <script src="js/personal.js"></script>
   <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'93f34b540c45038b',t:'MTc0NzE1MTI0NS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
