@@ -27,7 +27,7 @@ scene.add(directionalLight);
 const loader = new THREE.GLTFLoader();
 loader.load(
   // Sử dụng mô hình TechieBot.glb
-  "model/TechieBot.glb",
+  "3d/TechieBot.glb",
   (gltf) => {
     const model = gltf.scene;
     scene.add(model);
