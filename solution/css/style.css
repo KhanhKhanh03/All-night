@@ -271,7 +271,7 @@ body {
 .gtco-banner-area .col-md-6 .card .card-img-top {
   max-width: 430px;
   margin: 0 auto;
-  margin-top: 30px;
+  
   margin-right: 0;
 }
 @media (max-width: 1400px) {
@@ -828,4 +828,9 @@ body {
 
 html {
   scroll-behavior: smooth;
+}
+.square-image {
+    width: 600px;       /* Độ rộng ảnh */
+    height: 500px;      /* Chiều cao (cố định) */
+    object-fit: cover;
 }
