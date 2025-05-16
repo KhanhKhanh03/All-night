@@ -75,29 +75,3 @@
 function myFunction(x) {
     x.classList.toggle("change");
 }
-
-
-
-$(document).ready(function() {
-    $('.owl-carousel1').owlCarousel({
-        loop: true,
-        center: true,
-        margin: 0,
-        nav: false,
-        autoplay: true,
-        autoplayTimeout: 3000,
-        autoplayHoverPause: true,
-        smartSpeed: 600,
-        responsive: {
-            0: {
-                items: 1
-            },
-            600: {
-                items: 1
-            },
-            1000: {
-                items: 3
-            }
-        }
-    });
-});
