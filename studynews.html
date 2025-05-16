@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tin tức</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.min.css"
+      rel="stylesheet"
+    />
+    <!-- awesone fonts css-->
+    <link href="css/font-awesome.css" rel="stylesheet" type="text/css" />
+    <!-- owl carousel css-->
+    <link
+      rel="stylesheet"
+      href="owl-carousel/assets/owl.carousel.min.css"
+      type="text/css"
+    />
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <!-- custom CSS -->
+    <link rel="stylesheet" href="css/stylenews.css" />
+    <style>
+      .topbar-menu ul li a.active {
+        font-weight: bold;
+        color: #1d3ede; /* Màu xanh nổi bật cho danh mục được chọn */
+      }
+    </style>
+  </head>
+  <body>
+    <nav
+      class="navbar navbar-expand-lg navbar-light bg-light bg-transparent"
+      id="gtco-main-nav"
+    >
+      <div class="container">
+        <a class="navbar-brand">TechieBot</a>
+        <button
+          class="navbar-toggler"
+          data-target="#my-nav"
+          onclick="myFunction(this)"
+          data-toggle="collapse"
+        >
+          <span class="bar1"></span> <span class="bar2"></span>
+          <span class="bar3"></span>
+        </button>
+        <div id="my-nav" class="collapse navbar-collapse">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+            <li class="nav-item">
+              <a class="nav-link" href="#services">ChatBox</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#about">About</a>
+            </li>
+            <li class="nav-item"><a class="nav-link" href="#news">News</a></li>
+            <li class="nav-item">
+              <a class="nav-link" href="#contact">Contact</a>
+            </li>
+          </ul>
+          <form class="form-inline my-2 my-lg-0">
+            <a href="#" class="btn btn-info my-2 my-sm-0 text-uppercase"
+              >login</a
+            >
+          </form>
+        </div>
+      </div>
+    </nav>
+
+    <div class="section-one">
+      <div class="topbar-area">
+        <div class="container-1">
+          <div class="topbar-left">
+            <div class="topbar-menu text-md-left text-center">
+              <h1>Giáo dục</h1>
+              <ul class="align-self-center">
+                <li>
+                  <a
+                    href="?category=tin-tuc"
+                    data-rss="https://vnexpress.net/rss/giao-duc.rss"
+                    >Tin tức</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="?category=tuyen-sinh"
+                    data-rss="https://vnexpress.net/rss/tuyen-sinh.rss"
+                    >Tuyển sinh</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="?category=chan-dung"
+                    data-rss="https://vnexpress.net/rss/goc-nhin.rss"
+                    >Góc nhìn</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="?category=giao-duc-4-0"
+                    data-rss="https://vnexpress.net/rss/khoa-hoc.rss"
+                    >Giáo dục 4.0</a
+                  >
+                </li>
+              </ul>
+            </div>
+            <div class="topbar-right">
+              <div class="topbar-social">
+                <div class="topbar-date d-none d-lg-inline-block">
+                  <i class="fa fa-calendar"></i> Thứ 7, 9/5/2025
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- banner area start -->
+      <div class="banner-area banner-inner-1 bg-black" id="banner">
+        <!-- banner area start -->
+        <div class="banner-inner">
+          <div class="container-2">
+            <div class="row">
+              <div class="col-lg-6">
+                <img
+                  id="banner-image"
+                  src="assets/img/post/default.png"
+                  alt="banner"
+                />
+              </div>
+              <div class="col-lg-6 align-self-center">
+                <div class="banner-details mt-4 mt-lg-0">
+                  <h2 id="banner-title">Đang tải...</h2>
+                  <p id="banner-description">Đang tải...</p>
+                  <p class="time" id="banner-time">Đang tải...</p>
+                  <a class="btn-1 btn-blue" id="banner-link" href="#"
+                    >Đọc thêm</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="container-2">
+          <div class="row" id="banner-posts">
+            <!-- Dynamic banner posts will be loaded here -->
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-two">
+      <div class="news-container" id="news-container">
+        <!-- Dynamic news items will be loaded here -->
+      </div>
+    </div>
+
+    <script>
+      // Lấy danh mục từ URL
+      const urlParams = new URLSearchParams(window.location.search);
+      const category = urlParams.get("category") || "tin-tuc"; // Mặc định là tin-tuc
+
+      // Cập nhật tiêu đề dựa trên danh mục
+      const categoryTitles = {
+        "tin-tuc": "Tin tức",
+        "tuyen-sinh": "Tuyển sinh",
+        "chan-dung": "Góc nhìn",
+        "giao-duc-4-0": "Giáo dục 4.0",
+      };
+      document.querySelector(".topbar-menu h1").textContent =
+        categoryTitles[category] || "Tin tức";
+      document.title = categoryTitles[category] || "Tin tức"; // Cập nhật tiêu đề trang
+
+      // Đánh dấu danh mục đang được chọn
+      const menuLinks = document.querySelectorAll(".topbar-menu ul li a");
+      menuLinks.forEach((link) => {
+        if (link.getAttribute("href").includes(`category=${category}`)) {
+          link.classList.add("active");
+        }
+      });
+
+      async function fetchNews() {
+        try {
+          // Gửi yêu cầu đến API với danh mục
+          const response = await fetch(
+            `http://localhost:3000/api/news?category=${category}`
+          );
+          const news = await response.json();
+
+          // Update banner with the latest news
+          if (news.length > 0) {
+            const latest = news[0];
+            document.getElementById("banner-title").textContent = latest.title;
+            const descriptionText = latest.description.replace(/<[^>]+>/g, "");
+            document.getElementById("banner-description").textContent =
+              descriptionText || "No description available";
+            document.getElementById("banner-time").textContent = new Date(
+              latest.pubDate
+            ).toLocaleString();
+            document.getElementById("banner-link").href = latest.link;
+            document.getElementById("banner-image").src =
+              latest.image || "assets/img/post/default.png";
+          }
+
+          // Update banner posts
+          const bannerPosts = document.getElementById("banner-posts");
+          bannerPosts.innerHTML = news
+            .slice(1, 5)
+            .map(
+              (post) => `
+            <div class="col-lg-3 col-sm-6">
+              <div class="single-post-wrap style-white">
+                <div class="thumb">
+                  <img src="${
+                    post.image || "assets/img/post/default.png"
+                  }" alt="img" />
+                </div>
+                <div class="details">
+                  <h6 class="title">
+                    <a href="${post.link}">${post.title}</a>
+                    <p class="time">${new Date(
+                      post.pubDate
+                    ).toLocaleString()}</p>
+                  </h6>
+                </div>
+              </div>
+            </div>
+          `
+            )
+            .join("");
+
+          // Update news container
+          const newsContainer = document.getElementById("news-container");
+          newsContainer.innerHTML = news
+            .map(
+              (post) => `
+            <div class="news-item">
+              <img src="${post.image || "assets/img/post/default.png"}" alt="${
+                post.title
+              }" />
+              <div class="news-content">
+                <h3><a href="${post.link}">${post.title}</a></h3>
+                <p>${post.description || "No description available"}</p>
+                <div class="news-meta">
+                  ${new Date(post.pubDate).toLocaleString()}
+                </div>
+              </div>
+            </div>
+          `
+            )
+            .join("");
+        } catch (error) {
+          console.error("Error fetching news:", error);
+        }
+      }
+
+      // Fetch news on page load
+      fetchNews();
+    </script>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="js/jquery-3.3.1.slim.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <!-- owl carousel js-->
+    <!-- <script src="owl-carousel/owl.carousel.min.js"></script> -->
+    <script src="js/main.js"></script>
+  </body>
+</html>
