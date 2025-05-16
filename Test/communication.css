@@ -1,0 +1,326 @@
+/* Modernized CSS for a sleek and professional chat application */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  background: linear-gradient(135deg, #1e3a8a, #3b82f6);
+  background-size: cover;
+  background-attachment: fixed;
+  min-height: 100vh;
+  color: #1f2937;
+  transition: background 0.5s ease, color 0.3s ease;
+}
+
+body.dark-mode {
+  background: linear-gradient(135deg, #111827, #1f2937);
+  color: #f3f4f6;
+}
+
+.app-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+}
+
+header {
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+  z-index: 10;
+}
+
+body.dark-mode header {
+  background: rgba(31, 41, 55, 0.95);
+}
+
+.main-content {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+}
+
+.sidebar {
+  width: 320px;
+  background: rgba(255, 255, 255, 0.95);
+  border-right: 1px solid rgba(0, 0, 0, 0.1);
+  overflow-y: auto;
+  transition: width 0.3s ease, transform 0.3s ease;
+}
+
+body.dark-mode .sidebar {
+  background: rgba(31, 41, 55, 0.95);
+  border-right-color: rgba(255, 255, 255, 0.1);
+}
+
+.sidebar:hover {
+  transform: translateX(-3px);
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    width: 80px;
+  }
+  .sidebar:hover {
+    width: 320px;
+  }
+  .chat-name, .chat-preview {
+    display: none;
+  }
+  .sidebar:hover .chat-name,
+  .sidebar:hover .chat-preview {
+    display: block;
+  }
+}
+
+.chat-item {
+  display: flex;
+  align-items: center;
+  padding: 0.75rem 1rem;
+  margin: 0.5rem;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background: transparent;
+}
+
+.chat-item:hover {
+  background: rgba(0, 0, 0, 0.05);
+  transform: translateX(3px);
+}
+
+body.dark-mode .chat-item:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.chat-item.active {
+  background: linear-gradient(90deg, #3b82f6, #60a5fa);
+  color: #ffffff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.chat-item.active .chat-name,
+.chat-item.active .chat-preview {
+  color: #ffffff;
+}
+
+.chat-name {
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+body.dark-mode .chat-name {
+  color: #f3f4f6; /* Lightened text for dark mode */
+}
+
+.chat-preview {
+  font-size: 0.85rem;
+  color: #6b7280;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+body.dark-mode .chat-preview {
+  color: #d1d5db;
+}
+
+.chat-area {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background: rgba(255, 255, 255, 0.9);
+  position: relative;
+}
+
+body.dark-mode .chat-area {
+  background: rgba(17, 24, 39, 0.9);
+}
+
+.chat-header {
+  background: rgba(255, 255, 255, 0.95);
+  padding: 1rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+body.dark-mode .chat-header {
+  background: rgba(31, 41, 55, 0.95);
+  border-bottom-color: rgba(255, 255, 255, 0.1);
+}
+
+.chat-messages {
+  flex: 1;
+  padding: 1rem;
+  overflow-y: auto;
+  scroll-behavior: smooth;
+}
+
+.message {
+  margin: 0.5rem 0;
+  display: flex;
+  flex-direction: column;
+  max-width: 75%;
+}
+
+.message.sent {
+  align-self: flex-end;
+}
+
+.message.received {
+  align-self: flex-start;
+}
+
+.message-content {
+  padding: 0.75rem 1rem;
+  border-radius: 16px;
+  font-size: 0.95rem;
+  line-height: 1.4;
+  position: relative;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  background: #e1effa; /* Adjusted to match mockup intensity */
+  color: #1f2937;
+}
+
+.message.sent .message-content {
+  background: #87ceeb; /* Stronger blue to match mockup */
+  color: #ffffff;
+}
+
+.message.received .message-content {
+  background: #f3f4f6;
+  color: #1f2937;
+}
+
+body.dark-mode .message.received .message-content {
+  background: #374151;
+  color: #f3f4f6;
+}
+
+.message.group-message .message-content {
+  background: #87ceeb;
+  width: 100%;
+  max-width: 100%;
+}
+
+body.dark-mode .message.group-message .message-content {
+  background: #87ceeb;
+}
+
+.message-time {
+  font-size: 0.75rem;
+  color: #9ca3af;
+  margin-top: 0.25rem;
+  text-align: right;
+}
+
+.message.sent .message-time {
+  color: #bfdbfe;
+}
+
+body.dark-mode .message-time {
+  color: #d1d5db;
+}
+
+.chat-input {
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.95);
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+body.dark-mode .chat-input {
+  background: rgba(31, 41, 55, 0.95);
+  border-top-color: rgba(255, 255, 255, 0.1);
+}
+
+.input-group {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+#message-input {
+  flex: 1;
+  padding: 0.75rem 1rem;
+  border-radius: 12px;
+  border: 1px solid #d1d5db;
+  background: #ffffff;
+  transition: all 0.3s ease;
+}
+
+#message-input:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+}
+
+body.dark-mode #message-input {
+  background: #374151;
+  border-color: #4b5563;
+  color: #f3f4f6;
+}
+
+.custom-btn {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 12px;
+  background: linear-gradient(90deg, #3b82f6, #60a5fa);
+  color: #ffffff;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.custom-btn:hover {
+  background: linear-gradient(90deg, #2563eb, #3b82f6);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.custom-btn i {
+  margin-right: 0.5rem;
+}
+
+.search-bar {
+  display: flex;
+  align-items: center;
+}
+
+#search-friends {
+  padding: 0.75rem 1rem;
+  border-radius: 12px 0 0 12px;
+  border: 1px solid #d1d5db;
+  border-right: none;
+  background: #ffffff;
+}
+
+body.dark-mode #search-friends {
+  background: #374151;
+  border-color: #4b5563;
+  color: #f3f4f6;
+}
+
+#search-btn {
+  border-radius: 0 12px 12px 0;
+  padding: 0.75rem;
+}
+
+#emoji-picker {
+  position: absolute;
+  bottom: 80px;
+  right: 20px;
+  z-index: 1000;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+body.dark-mode #emoji-picker {
+  background: #1f2937;
+}
+
+#file-input {
+  display: none;
+}

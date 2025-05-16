@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TechiBot - Social Learning Platform</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/quill@1.3.7/dist/quill.snow.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="social.css">
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">TECHIBOT</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="#">Trang Chủ</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Hồ Sơ</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Bài Đăng</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Liên Hệ</a></li>
+          <li class="nav-item">
+            <a class="nav-link" href="#" id="notification-toggle"><i class="fas fa-bell"></i> <span class="badge bg-danger notification-count">0</span></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Notification Dropdown -->
+  <div class="notification-dropdown" id="notification-dropdown">
+    <div class="notification-header">Thông Báo</div>
+    <div class="notification-list"></div>
+  </div>
+
+  <!-- Main Content -->
+  <div class="container-fluid gtco-banner-area">
+    <div class="row">
+      <!-- Main Post Area -->
+      <div class="col-lg-8">
+        <!-- Tabs -->
+        <ul class="nav nav-tabs" id="postTabs" role="tablist">
+          <li class="nav-item">
+            <a class="nav-link tab-button active" id="global-tab" data-bs-toggle="tab" href="#global-posts" role="tab">Toàn Cầu</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link tab-button" id="personal-tab" data-bs-toggle="tab" href="#personal-posts" role="tab">Lịch Sử Cá Nhân</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link tab-button" id="learning-hub-tab" data-bs-toggle="tab" href="#learning-hub" role="tab">Trung Tâm Học Tập</a>
+          </li>
+        </ul>
+
+        <!-- Tab Content -->
+        <div class="tab-content mt-4">
+          <!-- Global Posts -->
+          <div class="tab-pane fade show active" id="global-posts" role="tabpanel">
+            <div id="global-posts-container">
+              <!-- Sample Post -->
+              <div class="post-card mb-4 reveal" data-post-id="1">
+                <div class="post-header d-flex align-items-center">
+                  <a href="friend.html"><img src="images/avt6.jpg" alt="Avatar" class="post-avatar"></a>
+                  <div class="ml-3 flex-grow-1">
+                    <h5 class="mb-0 text-primary">Nguyễn Đăng Khôi</h5>
+                    <small class="text-muted">2025-05-10</small>
+                  </div>
+                </div>
+                <p class="post-content mt-2">Ai giúp mình giải bài toán này không? Rất khó!</p>
+                <img src="images/de1.png" alt="Post Image" class="post-image w-100 mb-3">
+                <div class="post-actions d-flex justify-content-between">
+                  <button class="btn btn-outline-primary btn-sm like-btn" data-post-id="1">Thích <span class="like-count">15</span></button>
+                  <button class="btn btn-outline-primary btn-sm comment-btn" data-post-id="1">Bình Luận <span class="comment-count">12</span></button>
+                  <button class="btn btn-outline-primary btn-sm share-btn" data-post-id="1">Chia Sẻ <span class="share-count">6</span></button>
+                </div>
+                <div class="comments mt-3" data-post-id="1">
+                  <p><strong>Nguyễn Anh Kiệt: </strong>Đáp án là A!</p>
+                </div>
+              </div>
+              <div class="post-card mb-4 reveal" data-post-id="1">
+                <div class="post-header d-flex align-items-center">
+                  <a href="personal.html"><img src="images/avt3.jpg" alt="Avatar" class="post-avatar"></a>
+                  <div class="ml-3 flex-grow-1">
+                    <h5 class="mb-0 text-primary">Huỳnh Nguyên Khánh</h5>
+                    <small class="text-muted">2025-05-10</small>
+                  </div>
+                </div>
+                <p class="post-content mt-2">Từ hai câu thơ “Áo bào thay chiếu anh về đất/Sông Mã gầm lên khúc độc hành”, hãy viết đoạn văn ngắn khoảng 20 dòng giấy thi cảm nhận về người lính thời kì kháng chiến chống Pháp và sự phát huy tư tưởng yêu nước trong thời điểm hiện tại?</p>
+                <img src="images/pic1.jpg" alt="Post Image" class="post-image w-100 mb-3">
+                <div class="post-actions d-flex justify-content-between">
+                  <button class="btn btn-outline-primary btn-sm like-btn" data-post-id="1">Thích <span class="like-count">12</span></button>
+                  <button class="btn btn-outline-primary btn-sm comment-btn" data-post-id="1">Bình Luận <span class="comment-count">5</span></button>
+                  <button class="btn btn-outline-primary btn-sm share-btn" data-post-id="1">Chia Sẻ <span class="share-count">3</span></button>
+                </div>
+                <div class="comments mt-3" data-post-id="1">
+                  <p><strong>Nguyễn Anh Kiệt: </strong>Đáp án là A!</p>
+                </div>
+              </div>
+              <div class="post-card mb-4 reveal" data-post-id="1">
+                <div class="post-header d-flex align-items-center">
+                  <a href="friend.html"><img src="images/avt8.jpg" alt="Avatar" class="post-avatar"></a>
+                  <div class="ml-3 flex-grow-1">
+                    <h5 class="mb-0 text-primary">Mai Cam Thảo</h5>
+                    <small class="text-muted">2025-05-10</small>
+                  </div>
+                </div>
+                <p class="post-content mt-2">Giúp mình với! Câu 2 và câu 3 làm như nào đây ạ?</p>
+                <img src="images/de3.png" alt="Post Image" class="post-image w-100 mb-3">
+                <div class="post-actions d-flex justify-content-between">
+                  <button class="btn btn-outline-primary btn-sm like-btn" data-post-id="1">Thích <span class="like-count">10</span></button>
+                  <button class="btn btn-outline-primary btn-sm comment-btn" data-post-id="1">Bình Luận <span class="comment-count">7</span></button>
+                  <button class="btn btn-outline-primary btn-sm share-btn" data-post-id="1">Chia Sẻ <span class="share-count">12</span></button>
+                </div>
+                <div class="comments mt-3" data-post-id="1">
+                  <p><strong>Kim Anh Nguyễn Cửu: </strong>Cùng câu hỏi ạ</p>
+                </div>
+              </div>
+              <div class="post-card mb-4 reveal" data-post-id="1">
+                <div class="post-header d-flex align-items-center">
+                  <a href="friend.html"><img src="images/avt11.jpg" alt="Avatar" class="post-avatar"></a>
+                  <div class="ml-3 flex-grow-1">
+                    <h5 class="mb-0 text-primary">Hà My</h5>
+                    <small class="text-muted">2025-05-09</small>
+                  </div>
+                </div>
+                <p class="post-content mt-2">Câu 4 là đáp án B đúng không ạ?</p>
+                <img src="images/de4.jpg" alt="Post Image" class="post-image w-100 mb-3">
+                <div class="post-actions d-flex justify-content-between">
+                  <button class="btn btn-outline-primary btn-sm like-btn" data-post-id="1">Thích <span class="like-count">15</span></button>
+                  <button class="btn btn-outline-primary btn-sm comment-btn" data-post-id="1">Bình Luận <span class="comment-count">23</span></button>
+                  <button class="btn btn-outline-primary btn-sm share-btn" data-post-id="1">Chia Sẻ <span class="share-count">6</span></button>
+                </div>
+                <div class="comments mt-3" data-post-id="1">
+                  <p><strong>Đức Anh: </strong>Phải là câu D chứ?</p>
+                </div>
+              </div>
+              <div class="post-card mb-4 reveal" data-post-id="1">
+                <div class="post-header d-flex align-items-center">
+                  <a href="friend.html"><img src="images/avt9.jpg" alt="Avatar" class="post-avatar"></a>
+                  <div class="ml-3 flex-grow-1">
+                    <h5 class="mb-0 text-primary">Kim Anh Nguyễn Cửu</h5>
+                    <small class="text-muted">2025-05-09</small>
+                  </div>
+                </div>
+                <p class="post-content mt-2">Giúp mình câu 2, 3 và 4 với ạ!</p>
+                <img src="images/de5.jpg" alt="Post Image" class="post-image w-100 mb-3">
+                <div class="post-actions d-flex justify-content-between">
+                  <button class="btn btn-outline-primary btn-sm like-btn" data-post-id="1">Thích <span class="like-count">45</span></button>
+                  <button class="btn btn-outline-primary btn-sm comment-btn" data-post-id="1">Bình Luận <span class="comment-count">37</span></button>
+                  <button class="btn btn-outline-primary btn-sm share-btn" data-post-id="1">Chia Sẻ <span class="share-count">29</span></button>
+                </div>
+                <div class="comments mt-3" data-post-id="1">
+                  <p><strong>Nguyễn Quốc Duy: </strong>Câu 2 bạn áp dụng công thức...</p>
+                </div>
+              </div>
+              <div class="post-card mb-4 reveal" data-post-id="1">
+                <div class="post-header d-flex align-items-center">
+                  <a href="friend.html"><img src="images/avt13.jpg" alt="Avatar" class="post-avatar"></a>
+                  <div class="ml-3 flex-grow-1">
+                    <h5 class="mb-0 text-primary">Vo Dinh Phu</h5>
+                    <small class="text-muted">2025-05-09</small>
+                  </div>
+                </div>
+                <p class="post-content mt-2">Câu 78 và 79 là đáp án nào vậy ạ?</p>
+                <img src="images/de6.jpg" alt="Post Image" class="post-image w-100 mb-3">
+                <div class="post-actions d-flex justify-content-between">
+                  <button class="btn btn-outline-primary btn-sm like-btn" data-post-id="1">Thích <span class="like-count">12</span></button>
+                  <button class="btn btn-outline-primary btn-sm comment-btn" data-post-id="1">Bình Luận <span class="comment-count">5</span></button>
+                  <button class="btn btn-outline-primary btn-sm share-btn" data-post-id="1">Chia Sẻ <span class="share-count">3</span></button>
+                </div>
+                <div class="comments mt-3" data-post-id="1">
+                  <p><strong>Đặng Tiểu Phương: </strong>Câu 78 ta áp dụng công thức...</p>
+                </div>
+              </div>
+              <div class="post-card mb-4 reveal" data-post-id="1">
+                <div class="post-header d-flex align-items-center">
+                  <a href="friend.html"><img src="images/avt14.jpg" alt="Avatar" class="post-avatar"></a>
+                  <div class="ml-3 flex-grow-1">
+                    <h5 class="mb-0 text-primary">Minh Duc Do</h5>
+                    <small class="text-muted">2025-05-08</small>
+                  </div>
+                </div>
+                <p class="post-content mt-2">Câu 112 là câu D, câu 113 là câu B đúng ko mn? Cứu với ạ!</p>
+                <img src="images/de7.png" alt="Post Image" class="post-image w-100 mb-3">
+                <div class="post-actions d-flex justify-content-between">
+                  <button class="btn btn-outline-primary btn-sm like-btn" data-post-id="1">Thích <span class="like-count">51</span></button>
+                  <button class="btn btn-outline-primary btn-sm comment-btn" data-post-id="1">Bình Luận <span class="comment-count">43</span></button>
+                  <button class="btn btn-outline-primary btn-sm share-btn" data-post-id="1">Chia Sẻ <span class="share-count">29</span></button>
+                </div>
+                <div class="comments mt-3" data-post-id="1">
+                  <p><strong>Vo Dinh Phu: </strong>Cả hai đều là đáp án D mới đúng nha, tại...</p>
+                </div>
+              </div>
+              <div class="post-card mb-4 reveal" data-post-id="1">
+                <div class="post-header d-flex align-items-center">
+                  <a href="friend.html"><img src="images/avt15.jpg" alt="Avatar" class="post-avatar"></a>
+                  <div class="ml-3 flex-grow-1">
+                    <h5 class="mb-0 text-primary">Đức Anh</h5>
+                    <small class="text-muted">2025-05-08</small>
+                  </div>
+                </div>
+                <p class="post-content mt-2">Giúp mình với ạ!</p>
+                <img src="images/de8.png" alt="Post Image" class="post-image w-100 mb-3">
+                <div class="post-actions d-flex justify-content-between">
+                  <button class="btn btn-outline-primary btn-sm like-btn" data-post-id="1">Thích <span class="like-count">10</span></button>
+                  <button class="btn btn-outline-primary btn-sm comment-btn" data-post-id="1">Bình Luận <span class="comment-count">7</span></button>
+                  <button class="btn btn-outline-primary btn-sm share-btn" data-post-id="1">Chia Sẻ <span class="share-count">2</span></button>
+                </div>
+                <div class="comments mt-3" data-post-id="1">
+                  <p><strong>Châu Linh: </strong>Cùng câu hỏi ạ</p>
+                </div>
+              </div>
+              <!-- Additional posts will be dynamically loaded -->
+            </div>
+          </div>
+
+          <!-- Personal Posts -->
+          <div class="tab-pane fade" id="personal-posts" role="tabpanel">
+            <div id="personal-posts-container">
+              <!-- Sample Post -->
+              <div class="post-card mb-4 reveal" data-post-id="3">
+                <div class="post-header d-flex align-items-center">
+                  <div class="dropdown ml-2">
+                    <button class="btn btn-link text-muted p-0" data-bs-toggle="dropdown">
+                      <i class="fas fa-ellipsis-v"></i>
+                    </button>
+                    <div class="dropdown-menu">
+                      <a class="dropdown-item edit-post" href="#" data-post-id="3">Chỉnh Sửa</a>
+                      <a class="dropdown-item delete-post" href="#" data-post-id="3">Xóa</a>
+                    </div>
+                  </div>
+                  <img src="images/avt3.jpg" alt="Avatar" class="post-avatar ml-3">
+                  <div class="ml-3 flex-grow-1">
+                    <h5 class="mb-0 text-primary">Huỳnh Nguyên Khánh</h5>
+                    <small class="text-muted">2025-05-10</small>
+                  </div>
+                </div>
+                <p class="post-content mt-2">Từ hai câu thơ “Áo bào thay chiếu anh về đất/Sông Mã gầm lên khúc độc hành”, hãy viết đoạn văn ngắn khoảng 20 dòng giấy thi cảm nhận về người lính thời kì kháng chiến chống Pháp và sự phát huy tư tưởng yêu nước trong thời điểm hiện tại?</p>
+                <img src="images/pic1.jpg" alt="Post Image" class="post-image w-100 mb-3">
+                <div class="post-actions d-flex justify-content-between">
+                  <button class="btn btn-outline-primary btn-sm like-btn" data-post-id="3">Thích <span class="like-count">15</span></button>
+                  <button class="btn btn-outline-primary btn-sm comment-btn" data-post-id="3">Bình Luận <span class="comment-count">7</span></button>
+                  <button class="btn btn-outline-primary btn-sm share-btn" data-post-id="3">Chia Sẻ <span class="share-count">4</span></button>
+                </div>
+                <div class="comments mt-3" data-post-id="3"></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Learning Hub -->
+          <div class="tab-pane fade" id="learning-hub" role="tabpanel">
+            <div class="learning-hub-container">
+              <h3>Trung Tâm Học Tập</h3>
+              <div class="learning-card mb-4">
+                <h5>Thảo Luận Nhóm</h5>
+                <p>Tham gia các nhóm học tập để chia sẻ kiến thức và giải đáp thắc mắc.</p>
+                <a href="communication.html"><button class="btn btn-primary join-group-btn">Tham Gia Nhóm</button></a>
+              </div>
+              <div class="learning-card mb-4">
+                <h5>Khóa Học Đề Xuất</h5>
+                <p>Xem thêm về các khóa học, ôn thi và hơn thế nữa!</p>
+                <button class="btn btn-primary explore-courses-btn">Xem Khóa Học</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Create Post Button -->
+        <button class="btn create-post mt-4">Tạo Bài Đăng Mới</button>
+      </div>
+
+      <!-- Sidebar: Trending Topics -->
+      <div class="col-lg-4">
+        <div class="trending-topics reveal">
+          <h4><strong>Chủ đề đang HOT</strong></h4>
+          <ul class="list-group">
+            <li class="list-group-item"><a href="#">Giải đề thi toán Tốt nghiệp THPTQG 2024</a></li>
+            <li class="list-group-item"><a href="#">Bộ đề ôn luyện nghị luận văn học </a></li>
+            <li class="list-group-item"><a href="#">Đáp án các đề thi tốt nghiệp THPTQG từ 2018 - 2025</a></li>
+            <li class="list-group-item"><a href="#">Tổng hợp các công thức vật lý từ lớp 10 đến lớp 12</a></li>
+            <li class="list-group-item"><a href="#">Tổng hợp các đề thi Tốt nghiệp THPTQG qua các năm</a></li>
+            <li class="list-group-item"><a href="#">Bộ đề ôn luyện thi tốt nghiệp THPTQG các môn 2025 mới nhất</a></li>
+            <li class="list-group-item"><a href="#">Đề thi tuyển sinh vào 10 các tỉnh 2024-2025</a></li>
+            <li class="list-group-item"><a href="#">Tổng hợp các thì trong tiếng Anh</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Phần Nâng Cấp Tài Khoản -->
+    <div class="container-fluid gtco-upgrade reveal" id="upgrade">
+      <div class="container">
+        <center>
+          <h2 class="animate-text">Nâng Cấp Tài Khoản</h2>
+          <br />
+          <p class="animate-text">Mở khóa các tính năng cao cấp như khóa học nâng cao và nội dung độc quyền bằng cách nâng cấp tài khoản của bạn.</p>
+        </center>
+        <div class="upgrade-cards">
+          <div class="upgrade-card">
+            <h3>Kế Hoạch Tuần</h3>
+            <p class="price">$299/tuần</p>
+            <ul>
+              <li>Sử dụng AI chatbot 50 lần/ngày</li>
+              <li>Spaces và Group classes</li>
+              <li>Không giới hạn</li>
+              <li>Bất cứ khi nào bạn thích</li>
+            </ul>
+            <div class="button-container">
+              <a href = "vip.html"><button class="subscribe-btn">Đăng Ký Ngay</button></a>
+              <img src="images/tiền.png" alt="Tiền" class="upgrade-icon" />
+            </div>
+          </div>
+          <div class="upgrade-card premium">
+            <h3>Kế Hoạch Tháng</h3>
+            <p class="price">$499/tháng</p>
+            <ul>
+              <li>Sử dụng AI chatbot 200 lần/ngày</li>
+              <li>Spaces và Group classes</li>
+              <li>Không giới hạn</li>
+              <li>Bất cứ khi nào bạn thích</li>
+            </ul>
+            <div class="button-container">
+              <a href = "vip.html"><button class="subscribe-btn">Đăng Ký Ngay</button></a>
+              <img src="images/tiền1.png" alt="Tiền" class="upgrade-icon" />
+            </div>
+          </div>
+          <div class="upgrade-card">
+            <h3>Kế Hoạch Năm</h3>
+            <p class="price">$999/năm</p>
+            <ul>
+              <li>Sử dụng AI chatbot 1000 lần/ngày</li>
+              <li>Spaces và Group classes</li>
+              <li>Không giới hạn</li>
+              <li>Bất cứ khi nào bạn thích</li>
+            </ul>
+            <div class="button-container">
+              <a href = "vip.html"><button class="subscribe-btn">Đăng Ký Ngay</button></a>
+              <img src="images/tiền.png" alt="Thẻ" class="upgrade-icon" />
+              <img src="images/gv.png" alt="Người" class="upgrade-icon person" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Chân Trang -->
+    <footer class="footer-section reveal" id="gtco-footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-3 footer-column">
+            <h3 class="footer-logo">Giải Pháp</h3>
+            <p>Đồng hành cùng bạn trên hành trình học tập và phát triển bản thân.</p>
+          </div>
+          <div class="col-md-3 footer-column">
+            <h4>Khám Phá</h4>
+            <ul>
+              <li><a href="#">Trang Chủ</a></li>
+              <li><a href="#">Khóa Học</a></li>
+              <li><a href="#">AI Chat</a></li>
+              <li><a href="#">Tin Tức</a></li>
+            </ul>
+          </div>
+          <div class="col-md-3 footer-column">
+            <h4>Hỗ Trợ</h4>
+            <ul>
+              <li><a href="#">Liên Hệ</a></li>
+              <li><a href="#">Câu Hỏi Thường Gặp</a></li>
+              <li><a href="#">Chính Sách Bảo Mật</a></li>
+              <li><a href="#">Điều Khoản Dịch Vụ</a></li>
+            </ul>
+          </div>
+          <div class="col-md-3 footer-column">
+            <h4>Đăng Ký Nhận Tin</h4>
+            <p>Nhận thông tin cập nhật mới nhất từ chúng tôi.</p>
+            <div class="newsletter-form">
+              <input type="email" placeholder="Nhập email của bạn" />
+              <button class="subscribe-btn">Đăng Ký</button>
+            </div>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>© ALL NIGHT Copyright.</p>
+        </div>
+      </div>
+    </footer>
+
+  <!-- Fixed Buttons -->
+  <div class="fixed-buttons">
+    <button class="btn custom-btn create-post"><i class="fas fa-plus"></i> Tạo Bài</button>
+    <button class="btn custom-btn" id="dark-mode-toggle"><i class="fas fa-moon"></i></button>
+    <button class="btn custom-btn" id="scroll-top-btn"><i class="fas fa-arrow-up"></i></button>
+  </div>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.2/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.2/dist/ScrollToPlugin.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/quill@1.3.7/dist/quill.min.js"></script>
+  <script src="social.js"></script>
+</body>
+</html>
