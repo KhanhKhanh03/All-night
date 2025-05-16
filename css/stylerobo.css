@@ -190,6 +190,14 @@ body {
   height: 200px;
   background: transparent;
   margin-top: 20px; */
+
+  position: absolute;
+  top: 60px; /* Bù cho chiều cao của header */
+  left: 0;
+  width: 100%;
+  height: calc(100% - 60px); /* Chiếm toàn bộ chiều cao trừ header */
+  background: transparent;
+  display: none;
 }
 
 /* Chatbox */
@@ -391,10 +399,10 @@ body {
   align-items: center;
   padding: 10px 20px; */
   display: flex;
-  justify-content: flex-end; /* Căn các phần tử con sang bên phải */
-  align-items: center; /* Căn giữa theo chiều dọc */
-  background-color: #007bff; /* Màu nền tùy chọn */
-  height: 60px; /* Chiều cao header */
+  justify-content: flex-end;
+  align-items: center;
+  background-color: #007bff;
+  height: 60px;
   width: 100%;
   box-sizing: border-box;
 }
