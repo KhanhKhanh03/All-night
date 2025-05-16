@@ -12,31 +12,36 @@
     <!-- Google Fonts: Roboto -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="personal.css" />
+    <link rel="stylesheet" href="Test/friend.css" />
     <title>Hồ Sơ Cá Nhân - Giải Pháp</title>
   </head>
   <body>
     <!-- Thanh Điều Hướng -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark" id="gtco-main-nav">
-      <div class="container">
-        <a class="navbar-brand" style="font-size: 36px; color: #fff;">TECHIBOT</a>
-        <button class="navbar-toggler" data-target="#my-nav" onclick="myFunction(this)" data-toggle="collapse">
-          <span class="bar1"></span> <span class="bar2"></span> <span class="bar3"></span>
-        </button>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light bg-transparent" id="gtco-main-nav">
+    <div class="container">
+  <a class="navbar-brand d-flex align-items-center" href="#">
+    <img src="solution/images/logo6.png" alt="Logo" style="width: 40px; height: 40px; border-radius: 50%; margin-right: 10px;">
+    TECHIBOT
+  </a>
+
+        <button class="navbar-toggler" data-target="#my-nav" onclick="myFunction(this)" data-toggle="collapse"><span
+                class="bar1"></span> <span class="bar2"></span> <span class="bar3"></span></button>
         <div id="my-nav" class="collapse navbar-collapse">
-          <ul class="navbar-nav mr-auto">
-            <li class="nav-item"><a class="nav-link" href="index.html">Trang Chủ</a></li>
-            <li class="nav-item"><a class="nav-link active" href="#profile">Hồ Sơ</a></li>
-            <li class="nav-item"><a class="nav-link" href="#courses">Khóa Học</a></li>
-            <li class="nav-item"><a class="nav-link" href="#posts">Hỏi Bài</a></li>
-            <li class="nav-item"><a class="nav-link" href="#contact">Liên Hệ</a></li>
-          </ul>
-          <form class="form-inline my-2 my-lg-0">
-            <a href="#" class="btn btn-outline-dark my-2 my-sm-0 mr-3 text-uppercase">Đăng Xuất</a>
-          </form>
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item"><a class="nav-link" href="homepage.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="robo.html">AI ChatBot</a></li>
+                <li class="nav-item"><a class="nav-link" href="studynews.html">News</a></li>
+                <li class="nav-item"><a class="nav-link" href="news-demo.html">Courses</a></li>
+                <li class="nav-item"><a class="nav-link" href="personal.html">User</a></li>
+                <li class="nav-item"><a class="nav-link" href="">About Us</a></li>
+                <li class="nav-item"><a class="nav-link" href="">Contact</a></li>
+            </ul>
+            <form class="form-inline my-2 my-lg-0">
+                 <a href="login.html" class="btn btn-info my-2 my-sm-0 text-uppercase">login</a>
+            </form>
         </div>
-      </div>
-    </nav>
+    </div>
+</nav>
 
     <!-- Phần Hồ Sơ và Bạn Bè -->
     <div class="container-fluid gtco-banner-area reveal" id="profile">
@@ -44,14 +49,14 @@
         <div class="row">
           <div class="col-12">
             <div class="cover-photo">
-              <img src="images/avt7.jpg" alt="Ảnh Bìa" class="img-fluid" id="cover-photo-img" />
+              <img src="Test/images/cover1.jpg" alt="Ảnh Bìa" class="img-fluid" id="cover-photo-img" />
             </div>
             <div class="profile-header">
               <div class="profile-info">
                 <div class="profile-picture">
-                  <img src="images/avt3.jpg" alt="Ảnh Cá Nhân" id="profile-picture-img" />
+                  <img src="Test/images/avt4.jpg" alt="Ảnh Cá Nhân" id="profile-picture-img" />
                 </div>
-                <h2 class="animate-text profile-name"><b>Huỳnh Nguyên Khánh</b></h2>
+                <h2 class="animate-text profile-name"><b>Nguyễn Quốc Duy</b></h2>
               </div>
             </div>
           </div>
@@ -61,58 +66,32 @@
             <div id="personal-info">
               <h2 style="font-size: 25px;"><strong>Thông tin cá nhân</strong></h2>
               <br>
-              <p class="animate-text"><strong>Họ Tên:</strong> Huỳnh Nguyên Khánh</p>
-              <p class="animate-text"><strong>Tiểu Sử:</strong> Học, học và học</p>
-              <p class="animate-text"><strong>Ngày Sinh:</strong> 25/03/2006</p>
+              <p class="animate-text"><strong>Họ Tên:</strong> Nguyễn Quốc Duy</p>
+              <p class="animate-text"><strong>Tiểu Sử:</strong> Code, code, code</p>
+              <p class="animate-text"><strong>Ngày Sinh:</strong> 22/04/2006</p>
               <p class="animate-text"><strong>Trạng Thái:</strong> Sinh viên năm nhất</p>
-              <p class="animate-text"><strong>Sở Thích:</strong> Lập trình, vẽ, ngủ</p>
+              <p class="animate-text"><strong>Sở Thích:</strong> Lập trình, game, game</p>
               <p class="animate-text"><strong>Địa Chỉ:</strong> 470 Đ. Trần Đại Nghĩa, Hoà Hải, Ngũ Hành Sơn, Đà Nẵng</p>
-            </div>
-            <div id="edit-form" class="edit-form" style="display: none;">
-              <h5 style="font-size: 25px;"><strong>Thông Tin Chỉnh Sửa</strong></h5>
-              <br>
-              <div class="photo-edit-section">
-                <h6>Chỉnh Sửa Ảnh</h6>
-                <div class="cover-photo-edit">
-                  <img src="images/avt7.jpg" alt="Ảnh Bìa" class="img-fluid" id="edit-cover-photo-img" />
-                  <input type="file" id="edit-cover-photo" accept="image/*" style="display: none;" />
-                  <button type="button" class="btn btn-outline-primary custom-btn mt-2" id="change-cover-photo-btn">Thay Đổi Ảnh Bìa</button>
-                  <button type="button" class="btn btn-outline-danger custom-btn mt-2" id="remove-cover-photo-btn">Xóa Ảnh Bìa</button>
-                </div>
-                <div class="profile-photo-edit">
-                  <img src="images/avt3.jpg" alt="Ảnh Cá Nhân" class="img-fluid" id="edit-profile-picture-img" />
-                  <input type="file" id="edit-profile-picture" accept="image/*" style="display: none;" />
-                  <button type="button" class="btn btn-outline-primary custom-btn mt-2" id="change-profile-picture-btn">Thay Đổi Ảnh Cá Nhân</button>
-                  <button type="button" class="btn btn-outline-danger custom-btn mt-2" id="remove-profile-picture-btn">Xóa Ảnh Cá Nhân</button>
-                </div>
-              </div>
-              <br>
-              <label for="edit-name"><strong>Họ Tên:</strong></label>
-              <input type="text" class="form-control mb-2" id="edit-name" value="Huỳnh Nguyên Khánh" placeholder="Họ Tên">
-              <label for="edit-bio"><strong>Tiểu Sử:</strong></label>
-              <input type="text" class="form-control mb-2" id="edit-bio" value="Học, học và học" placeholder="Tiểu Sử">
-              <label for="edit-dob"><strong>Ngày Sinh:</strong></label>
-              <input type="date" class="form-control mb-2" id="edit-dob" value="2006-03-25">
-              <label for="edit-status"><strong>Trạng Thái:</strong></label>
-              <input type="text" class="form-control mb-2" id="edit-status" value="Sinh viên năm nhất" placeholder="Trạng Thái">
-              <label for="edit-hobbies"><strong>Sở Thích:</strong></label>
-              <input type="text" class="form-control mb-2" id="edit-hobbies" value="Lập trình, vẽ, ngủ" placeholder="Sở Thích">
-              <label for="edit-address"><strong>Địa Chỉ:</strong></label>
-              <input type="text" class="form-control mb-2" id="edit-address" value="470 Đ. Trần Đại Nghĩa, Hoà Hải, Ngũ Hành Sơn, Đà Nẵng" placeholder="Địa Chỉ">
-              <div class="button-group mt-3" id="edit-buttons">
-                <button id="cancel-edit" class="btn btn-secondary custom-btn">Hủy</button>
-                <button id="save-edit" class="btn btn-primary custom-btn">Lưu</button>
-              </div>
             </div>
             <div class="donate-box">
               <h5 style="font-size: 20px;"><strong>Tài Khoản Xu</strong></h5>
-              <p class="animate-text"><strong>Số Xu Hiện Tại:</strong> 150 Xu</p>
-              <a href="vip.html"><button id="recharge-btn" class="btn btn-primary custom-btn">Nạp Xu</button></a>
+              <p class="animate-text"><strong>Số Xu Hiện Tại:</strong> <span id="current-coins">257</span> Xu</p>
+              <button id="recharge-btn" class="btn btn-primary custom-btn">Ủng hộ</button>
+              <div class="donate-input" id="donate-input" style="display: none; margin-top: 15px;">
+                <label for="donate-amount"><strong>Nhập Số Xu:</strong></label>
+                <input type="number" id="donate-amount" class="form-control mb-2" placeholder="Nhập số xu" min="1" />
+                <div class="donate-actions">
+                  <button id="cancel-donate" class="btn btn-secondary custom-btn mr-2">Hủy</button>
+                  <button id="confirm-donate" class="btn btn-primary custom-btn">Xác nhận</button>
+                </div>
+              </div>
             </div>
             <br>
             <center>
               <div id="edit-profile-container">
-                <button id="edit-profile" class="btn btn-primary custom-btn">Chỉnh Sửa</button>
+                <button id="edit-profile" class="btn btn-primary custom-btn">Hủy kết bạn</button>
+                <button id="edit-profile" class="btn btn-primary custom-btn">Chặn</button>
+                <a href="communication.html"><button id="edit-profile" class="btn btn-primary custom-btn">Nhắn tin</button></a>
               </div>
             </center>
           </div>
@@ -125,18 +104,18 @@
                 <div class="carousel-item active">
                   <div class="row">
                     <div class="col-md-4 friend-card">
-                      <a href="friend.html">
+                      <a href="personal.html">
                         <div class="card text-center zoom-card">
-                          <img src="images/avt4.jpg" class="card-img-top" alt="Bạn 1" />
+                          <img src="Test/images/avt3.jpg" class="card-img-top" alt="Bạn 1" />
                           <div class="card-body">
-                            <a href="friend.html"><p class="card-title friend-name"><b>Nguyễn Quốc Duy</b></p></a>
+                            <a href="personal.html"><p class="card-title friend-name"><b>Huỳnh Nguyên Khánh</b></p></a>
                          </div>
                       </div>
                     </div>
                     <div class="col-md-4 friend-card">
                       <a href="friend.html">
                       <div class="card text-center zoom-card">
-                        <img src="images/avt5.jpg" class="card-img-top" alt="Bạn 2" />
+                        <img src="Test/images/avt5.jpg" class="card-img-top" alt="Bạn 2" />
                         <div class="card-body">
                           <a href="friend.html"><p class="card-title friend-name"><b>Nguyễn Anh Kiệt</b></p></a>
                         </div>
@@ -145,7 +124,7 @@
                     <div class="col-md-4 friend-card">
                       <a href="friend.html">
                       <div class="card text-center zoom-card">
-                        <img src="images/avt6.jpg" class="card-img-top" alt="Bạn 3" />
+                        <img src="Test/images/avt6.jpg" class="card-img-top" alt="Bạn 3" />
                         <div class="card-body">
                           <a href="friend.html"><p class="card-title friend-name"><b>Nguyễn Đăng Khôi</b></p></a>
                         </div>
@@ -154,7 +133,7 @@
                     <div class="col-md-4 friend-card">
                       <a href="friend.html">
                       <div class="card text-center zoom-card">
-                        <img src="images/avt8.jpg" class="card-img-top" alt="Bạn 4" />
+                        <img src="Test/images/avt8.jpg" class="card-img-top" alt="Bạn 4" />
                         <div class="card-body">
                           <a href="friend.html"><p class="card-title friend-name"><b>Mai Cam Thảo</b></p></a>
                         </div>
@@ -163,7 +142,7 @@
                     <div class="col-md-4 friend-card">
                       <a href="friend.html">
                       <div class="card text-center zoom-card">
-                        <img src="images/avt9.jpg" class="card-img-top" alt="Bạn 5" />
+                        <img src="Test/images/avt9.jpg" class="card-img-top" alt="Bạn 5" />
                         <div class="card-body">
                           <a href="friend.html"><p class="card-title friend-name"><b>Kim Anh Nguyễn Cửu</b></p></a>
                         </div>
@@ -172,7 +151,7 @@
                     <div class="col-md-4 friend-card">
                       <a href="friend.html">
                       <div class="card text-center zoom-card">
-                        <img src="images/avt10.jpg" class="card-img-top" alt="Bạn 6" />
+                        <img src="Test/images/avt10.jpg" class="card-img-top" alt="Bạn 6" />
                         <div class="card-body">
                           <a href="friend.html"><p class="card-title friend-name"><b>Jenifer Phạm</b></p></a>
                         </div>
@@ -185,7 +164,7 @@
                     <div class="col-md-4 friend-card">
                       <a href="friend.html">
                       <div class="card text-center zoom-card">
-                        <img src="images/avt14.jpg" class="card-img-top" alt="Bạn 7" />
+                        <img src="Test/images/avt14.jpg" class="card-img-top" alt="Bạn 7" />
                         <div class="card-body">
                           <a href="friend.html"><p class="card-title friend-name"><b>Minh Duc Do</b></p></a>
                         </div>
@@ -194,7 +173,7 @@
                     <div class="col-md-4 friend-card">
                       <a href="friend.html">
                       <div class="card text-center zoom-card">
-                        <img src="images/avt13.jpg" class="card-img-top" alt="Bạn 8" />
+                        <img src="Test/images/avt13.jpg" class="card-img-top" alt="Bạn 8" />
                         <div class="card-body">
                           <a href="friend.html"><p class="card-title friend-name"><b>Dinh Phu</b></p></a>
                         </div>
@@ -203,7 +182,7 @@
                     <div class="col-md-4 friend-card">
                       <a href="friend.html">
                       <div class="card text-center zoom-card">
-                        <img src="images/avt12.jpg" class="card-img-top" alt="Bạn 9" />
+                        <img src="Test/images/avt12.jpg" class="card-img-top" alt="Bạn 9" />
                         <div class="card-body">
                           <a href="friend.html"><p class="card-title friend-name"><b>Đặng Tiểu Phương</b></p></a>
                         </div>
@@ -212,7 +191,7 @@
                     <div class="col-md-4 friend-card">
                       <a href="friend.html">
                       <div class="card text-center zoom-card">
-                        <img src="images/avt11.jpg" class="card-img-top" alt="Bạn 10" />
+                        <img src="Test/images/avt11.jpg" class="card-img-top" alt="Bạn 10" />
                         <div class="card-body">
                           <a href="friend.html"><p class="card-title friend-name"><b>Bùi Hà My</b></p></a>
                         </div>
@@ -221,7 +200,7 @@
                     <div class="col-md-4 friend-card">
                       <a href="friend.html">
                       <div class="card text-center zoom-card">
-                        <img src="images/avt15.jpg" class="card-img-top" alt="Bạn 11" />
+                        <img src="Test/images/avt15.jpg" class="card-img-top" alt="Bạn 11" />
                         <div class="card-body">
                           <a href="friend.html"><p class="card-title friend-name"><b>Đức Anh</b></p></a>
                         </div>
@@ -230,7 +209,7 @@
                     <div class="col-md-4 friend-card">
                       <a href="friend.html">
                       <div class="card text-center zoom-card">
-                        <img src="images/avt16.jpg" class="card-img-top" alt="Bạn 12" />
+                        <img src="Test/images/avt16.jpg" class="card-img-top" alt="Bạn 12" />
                         <div class="card-body">
                           <a href="friend.html"><p class="card-title friend-name"><b>Châu Linh</b></p></a>
                         </div>
@@ -256,7 +235,7 @@
           <div class="carousel-inner" id="course-carousel">
             <div class="course-item">
               <div class="card text-center zoom-card course-card">
-                <img src="images/pic1.jpg" class="card-img-top" alt="Khóa Học 1" />
+                <img src="Test/images/pic1.jpg" class="card-img-top" alt="Khóa Học 1" />
                 <div class="card-body">
                   <h5 class="card-title"><b>Ngữ Văn 12 - Tây Tiến</b></h5>
                   <p class="card-text">Hiểu rõ về tác phẩm Tây Tiến của...</p>
@@ -265,7 +244,7 @@
             </div>
             <div class="course-item">
               <div class="card text-center zoom-card course-card">
-                <img src="images/pic2.jpg" class="card-img-top" alt="Khóa Học 2" />
+                <img src="Test/images/pic2.jpg" class="card-img-top" alt="Khóa Học 2" />
                 <div class="card-body">
                   <h5 class="card-title"><b>Ngữ Văn 12 Hay Nhất - X...</b></h5>
                   <p class="card-text">Hiểu rõ về tác phẩm Xuân Tóc...</p>
@@ -274,7 +253,7 @@
             </div>
             <div class="course-item">
               <div class="card text-center zoom-card course-card">
-                <img src="images/pic3.jpg" class="card-img-top" alt="Khóa Học 3" />
+                <img src="Test/images/pic3.jpg" class="card-img-top" alt="Khóa Học 3" />
                 <div class="card-body">
                   <h5 class="card-title"><b>Soạn Văn 12 - Muối của R...</b></h5>
                   <p class="card-text">Hiểu rõ về tác phẩm Muối của...</p>
@@ -283,7 +262,7 @@
             </div>
             <div class="course-item">
               <div class="card text-center zoom-card course-card">
-                <img src="images/pic4.png" class="card-img-top" alt="Khóa Học 4" />
+                <img src="Test/images/pic4.png" class="card-img-top" alt="Khóa Học 4" />
                 <div class="card-body">
                   <h5 class="card-title"><b>Soạn bài Hải Khẩu Linh Từ</b></h5>
                   <p class="card-text">Lời giải chi tiết về tác phẩm...</p>
@@ -292,7 +271,7 @@
             </div>
             <div class="course-item">
               <div class="card text-center zoom-card course-card">
-                <img src="images/pic5.png" class="card-img-top" alt="Khóa Học 5" />
+                <img src="Test/images/pic5.png" class="card-img-top" alt="Khóa Học 5" />
                 <div class="card-body">
                   <h5 class="card-title"><b>Vội Vàng văn 12 - Xuân Diệu</b></h5>
                   <p class="card-text">Soạn bài chi tiết về bài Vội Vàng...</p>
@@ -301,7 +280,7 @@
             </div>
             <div class="course-item">
               <div class="card text-center zoom-card course-card">
-                <img src="images/pic6.jpg" class="card-img-top" alt="Khóa Học 6" />
+                <img src="Test/images/pic6.jpg" class="card-img-top" alt="Khóa Học 6" />
                 <div class="card-body">
                   <h5 class="card-title"><b>Con Gà Thờ - Ngữ Văn 12</b></h5>
                   <p class="card-text">Dễ dàng nắm bắt được tác phẩm Co...</p>
@@ -317,17 +296,32 @@
     <!-- Phần Lịch Sử Bài Đăng Hỏi Bài -->
     <div class="container-fluid gtco-banner-area reveal" id="posts">
       <div class="container">
-        <h2 class="animate-text" style="text-align: center;">Lịch Sử Bài Đăng Của Tôi</h2>
+        <h2 class="animate-text" style="text-align: center;">Lịch Sử Bài Đăng</h2>
+        <br />
         <div class="row">
           <div class="col-12 mt-4">
-            <div class="post top-post" data-url="social.html">
-              <h4>Bài đăng mới nhất của tôi</h4>
-              <p>Từ hai câu thơ “Áo bào thay chiếu anh về đất/Sông Mã gầm lên khúc độc hành”, hãy viết đoạn văn ngắn khoảng 20 dòng giấy thi cảm nhận về người lính thời kì kháng chiến chống Pháp và sự phát huy tư tưởng yêu nước trong thời điểm hiện tại?</p>
-              <img src="images/pic1.jpg" alt="Hình ảnh bài toán" class="img-fluid rounded mb-2" />
+            <div class="post top-post" href="social.html">
+              <h4>Bài đăng mới nhất đây</h4>
+              <p>Có ai giải giúp mình bài toán này không?</p>
+              <img src="Test/images/de1.png" alt="Hình ảnh bài toán" class="img-fluid rounded mb-2" />
               <br>
-              <small>Đăng bởi Huỳnh Nguyên Khánh vào 2025-05-10</small>
+              <small>Đăng bởi Huỳnh Nguyên Khánh vào 2025-05-06</small>
               <br>
               <div class="comments">
+                <p><strong>Nguyễn Anh Kiệt:</strong> Đáp án A</p>
+                <p><strong>Nguyễn Quốc Duy:</strong> Là câu A</p>
+                <p><strong>...</strong></p>
+              </div>
+            </div>
+            <div class="post second-post" data-url="social.html">
+              <p>Có ai giải giúp mình bài toán này không?</p>
+              <img src="Test/images/de2.png" alt="Hình ảnh bài toán" class="img-fluid rounded mb-2" />
+              <br>
+              <small>Đăng bởi Huỳnh Nguyên Khánh vào 2025-05-06</small>
+              <br>
+              <div class="comments">
+                <p><strong>Mai Cam Thảo:</strong> Đáp án B</p>
+                <p><strong>Jenifer Phậm:</strong> Là câu B</p>
                 <p><strong>...</strong></p>
               </div>
             </div>
@@ -350,7 +344,7 @@
         <div class="upgrade-cards">
           <div class="upgrade-card">
             <h3>Kế Hoạch Tuần</h3>
-            <p class="price">$299/tuần</p>
+            <p class="price">19,000VNĐ/tuần</p>
             <ul>
               <li>Sử dụng AI chatbot 50 lần/ngày</li>
               <li>Spaces và Group classes</li>
@@ -359,12 +353,12 @@
             </ul>
             <div class="button-container">
               <a href = "vip.html"><button class="subscribe-btn">Đăng Ký Ngay</button></a>
-              <img src="images/tiền.png" alt="Tiền" class="upgrade-icon" />
+              <img src="Test/images/tiền.png" alt="Tiền" class="upgrade-icon" />
             </div>
           </div>
           <div class="upgrade-card premium">
             <h3>Kế Hoạch Tháng</h3>
-            <p class="price">$499/tháng</p>
+            <p class="price">49,000VNĐ/tháng</p>
             <ul>
               <li>Sử dụng AI chatbot 200 lần/ngày</li>
               <li>Spaces và Group classes</li>
@@ -373,12 +367,12 @@
             </ul>
             <div class="button-container">
               <a href = "vip.html"><button class="subscribe-btn">Đăng Ký Ngay</button></a>
-              <img src="images/tiền1.png" alt="Tiền" class="upgrade-icon" />
+              <img src="Test/images/tiền1.png" alt="Tiền" class="upgrade-icon" />
             </div>
           </div>
           <div class="upgrade-card">
             <h3>Kế Hoạch Năm</h3>
-            <p class="price">$999/năm</p>
+            <p class="price">499,000VNĐ/năm</p>
             <ul>
               <li>Sử dụng AI chatbot 1000 lần/ngày</li>
               <li>Spaces và Group classes</li>
@@ -387,8 +381,8 @@
             </ul>
             <div class="button-container">
               <a href = "vip.html"><button class="subscribe-btn">Đăng Ký Ngay</button></a>
-              <img src="images/tiền.png" alt="Thẻ" class="upgrade-icon" />
-              <img src="images/gv.png" alt="Người" class="upgrade-icon person" />
+              <img src="Test/images/tiền.png" alt="Thẻ" class="upgrade-icon" />
+              <img src="Test/images/gv.png" alt="Người" class="upgrade-icon person" />
             </div>
           </div>
         </div>
@@ -400,7 +394,7 @@
       <div class="container">
         <div class="row">
           <div class="col-md-3 footer-column">
-            <h3 class="footer-logo">Giải Pháp</h3>
+            <h3 class="footer-logo">Liên hệ</h3>
             <p>Đồng hành cùng bạn trên hành trình học tập và phát triển bản thân.</p>
           </div>
           <div class="col-md-3 footer-column">
@@ -449,9 +443,9 @@
     <script src="js/bootstrap.min.js"></script>
     <script src="owl-carousel/owl.carousel.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-    <script src="personal.js"></script>
+    <script src="Test/friend.js"></script>
     <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'93c248830c01ad80',t:'MTc0NjYzNzMyNy4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script>
     <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'93c5c8de9b25afc6',t:'MTc0NjY3NDA0Mi4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script>
     <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'93d83e868b86677d',t:'MTc0Njg2NzYwNS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script>
-  <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'93e01db73878b05e',t:'MTc0Njk1MDE0Ny4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+  <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'93e01db73878b05e',t:'MTc0Njk1MDE0Ny4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script><script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'93e2c20e9e09676e',t:'MTc0Njk3Nzg1MC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
