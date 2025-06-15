@@ -242,7 +242,7 @@ body {
 .sidebar .logo-content .logo .logo-name {
   font-size: 23px;
   font-weight: 600;
-  margin: 0 10px;
+  margin: 0 50px;
 }
 
 .sidebar #btn {
@@ -259,7 +259,7 @@ body {
 }
 
 .sidebar.active #btn {
-  left: 15%;
+  left: 20%;
 }
 
 .sidebar .search {
@@ -421,7 +421,7 @@ body {
 }
 
 .chat-area {
-  flex: 1;
+  /* flex: 1;
   padding-top: 20px;
   padding-left: 20px;
   padding-bottom: 70px;
@@ -430,7 +430,15 @@ body {
   width: 100%;
   height: 100%;
   box-sizing: border-box;
-  height: calc(100vh - 70px - 40px - 60px - 20px);
+  height: calc(100vh - 70px - 40px - 60px - 20px); */
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto;
+  background: #e7f2fc;
+  width: 100%;
+  height: calc(
+    100vh - 70px - 60px - 70px
+  ); /* Điều chỉnh dựa trên header và input-area */
 }
 .chat-area::-webkit-scrollbar {
   width: 8px;
@@ -446,20 +454,43 @@ body {
 .chat-area::-webkit-scrollbar-thumb:hover {
   background: #555;
 }
+
+.input-area,
+.input-area *,
+.input-area textarea,
+.input-area .input-wrap,
+.input-area .send-button {
+  box-sizing: border-box !important; /* Override global content-box */
+}
+
 .input-area {
-  display: flex;
-  align-items: center;
-  padding: 10px 15px;
   position: fixed;
   bottom: 10px;
   left: 50%;
-  width: 400px;
-  transform: translateX(-50%); /* Luôn căn giữa theo trục X */
-  transition: all 0.5s ease;
+  margin: 0 auto;
+  transform: translateX(-50%);
+  width: 80%; /* Tự động điều chỉnh theo màn hình */
+  max-width: 600px;
+  transition: all 0.3s ease;
 }
 
 .sidebar.active ~ .main .input-area {
-  /* margin-left: 125px; */
+  width: calc(80% - 200px); /* Giảm chiều rộng khi sidebar mở */
+  transform: translateX(calc(-50% + 100px));
+}
+
+.input-area textarea {
+  flex: 1;
+  padding: 8px 40px 8px 40px;
+  border: none;
+  border-radius: 20px;
+  font-size: 14px;
+  outline: none;
+  resize: none;
+  overflow-y: auto;
+  white-space: pre-wrap; /* Đảm bảo xuống dòng tự nhiên */
+  word-wrap: break-word;
+  line-height: 1.5;
 }
 
 .input-area .input-wrap {
@@ -534,6 +565,7 @@ body {
   padding: 10px;
   border-radius: 10px;
   max-width: 50%;
+  word-wrap: break-word;
 }
 
 .message.bot {
@@ -558,4 +590,20 @@ body {
   color: #666;
   margin-right: auto;
   font-style: italic;
+}
+
+#mic-button,
+#speaker-button {
+  padding: 5px 10px;
+  margin-left: 5px;
+  font-size: 18px;
+  cursor: pointer;
+  border: none;
+  background-color: #f0f0f0;
+  border-radius: 5px;
+}
+
+#mic-button:hover,
+#speaker-button:hover {
+  background-color: #e0e0e0;
 }

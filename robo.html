@@ -38,7 +38,19 @@
       id="gtco-main-nav"
     >
       <div class="container">
-        <a class="navbar-brand">TechieBot</a>
+        <a class="navbar-brand d-flex align-items-center" href="#">
+          <img
+            src="images/logo6.png"
+            alt="Logo"
+            style="
+              width: 40px;
+              height: 40px;
+              border-radius: 50%;
+              margin-right: 10px;
+            "
+          />
+          TECHIEBOT
+        </a>
         <button
           class="navbar-toggler"
           data-target="#my-nav"
@@ -50,14 +62,19 @@
         </button>
         <div id="my-nav" class="collapse navbar-collapse">
           <ul class="navbar-nav mr-auto">
-            <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
             <li class="nav-item">
-              <a class="nav-link" href="#services">ChatBox</a>
+              <a class="nav-link" href="homepage.html">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#about">About</a>
+              <a class="nav-link" href="robo.html">AI ChatBox</a>
             </li>
-            <li class="nav-item"><a class="nav-link" href="#news">News</a></li>
+            <li class="nav-item">
+              <a class="nav-link" href="studynews.html">News</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="personal.html">User</a>
+            </li>
+            <li class="nav-item"><a class="nav-link" href="">About Us</a></li>
             <li class="nav-item">
               <a class="nav-link" href="#contact">Contact</a>
             </li>
@@ -76,7 +93,6 @@
         <div class="sidebar">
           <div class="logo-content">
             <div class="logo">
-              <!-- <img src="/images/logo.png" /> -->
               <div class="logo-name">TechieBot AI</div>
             </div>
             <i id="btn" class="fa-solid fa-bars"></i>
@@ -104,12 +120,14 @@
         <div class="main">
           <div class="header">
             <div class="right-buttons">
+              <button id="mic-button" title="Nhấn để nói">🎙️</button>
+              <button id="speaker-button" title="Bật/Tắt âm thanh">🔊</button>
               <button class="logo">
-                <img src="/images/logo.png" style="width: 40px; height: 40px" />
+                <img src="images/logo6.png" style="width: 40px; height: 40px" />
               </button>
-              <button><i class="ri-delete-bin-line"></i></button>
+              <!-- <button><i class="ri-delete-bin-line"></i></button>
               <button><i class="ri-save-line"></i></button>
-              <button><i class="ri-share-forward-2-fill"></i></button>
+              <button><i class="ri-share-forward-2-fill"></i></button> -->
             </div>
           </div>
           <div class="chat-area" id="chat-area">
@@ -148,11 +166,11 @@
               <i class="fa-solid fa-paperclip"></i>
               <input type="file" id="file-input" />
             </div>
-            <input
-              type="text"
+            <textarea
               id="user-input"
               placeholder="Type / for commands"
-            />
+              rows="1"
+            ></textarea>
             <button class="send-button" id="send-button">
               <i class="ri-arrow-up-line"></i>
             </button>
@@ -161,6 +179,7 @@
       </div>
     </div>
 
+    <script src="js/voice-recognition.js"></script>
     <script src="js/robo.js"></script>
     <script src="js/chatbox.js"></script>
     <!-- Optional JavaScript -->

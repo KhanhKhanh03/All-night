@@ -57,59 +57,6 @@ const wss = new WebSocket.Server({ server });
 // OpenRouter API configuration
 const openrouterApiKey = process.env.OPENROUTER_API_KEY;
 const openrouterUrl = "https://openrouter.ai/api/v1/chat/completions";
-
-// Handle WebSocket connections
-// wss.on("connection", (ws) => {
-//   console.log("Client connected");
-
-//   ws.on("message", async (message) => {
-//     const receivedMessage = message.toString();
-
-//     // Check if the message is a file name (contains a file extension)
-//     if (receivedMessage.includes(".")) {
-//       console.log("File received:", receivedMessage);
-//       ws.send(`Đã nhận file: ${receivedMessage}`);
-//       ws.send(
-//         "Hiện tại tôi chỉ có thể xác nhận thông tin file, chưa xử lý nội dung file."
-//       );
-//     } else {
-//       // Handle as a text message
-//       try {
-//         // Call OpenRouter API
-//         const response = await axios.post(
-//           openrouterUrl,
-//           {
-//             model: "deepseek/deepseek-chat:free", // Hoặc "deepseek/deepseek-r1:free"
-//             messages: [{ role: "user", content: receivedMessage }],
-//             max_tokens: 150,
-//           },
-//           {
-//             headers: {
-//               Authorization: `Bearer ${openrouterApiKey}`,
-//               "Content-Type": "application/json",
-//               "HTTP-Referer": "YOUR_SITE_URL", // Thay bằng URL của bạn (tùy chọn)
-//               "X-Title": "YOUR_SITE_NAME", // Thay bằng tên site (tùy chọn)
-//             },
-//           }
-//         );
-
-//         const botReply = response.data.choices[0].message.content;
-//         ws.send(botReply);
-//       } catch (error) {
-//         console.error("Error calling OpenRouter API:", error.message);
-//         let errorMessage = "Lỗi khi kết nối với AI. Vui lòng thử lại!";
-//         if (error.response) {
-//           errorMessage = `Lỗi từ OpenRouter: ${error.response.status} - ${error.response.data.error.message}`;
-//         }
-//         ws.send(errorMessage);
-//       }
-//     }
-//   });
-
-//   ws.on("close", () => {
-//     console.log("Client disconnected");
-//   });
-// });
 wss.on("connection", (ws) => {
   console.log("Client connected");
 
@@ -120,16 +67,23 @@ wss.on("connection", (ws) => {
   ws.on("message", async (message) => {
     const receivedMessage = message.toString();
 
-    //   if (receivedMessage === "newChat") {
-    //   const newUserId = Math.random().toString(36).substr(2, 9);
-    //   ws.send(JSON.stringify({ type: "userId", userId: newUserId }));
-    //   return;
-    // }
-
     if (receivedMessage.startsWith("getHistory:")) {
       const requestedUserId = receivedMessage.split(":")[1];
       const messages = await getHistory(requestedUserId);
       ws.send(JSON.stringify({ type: "history", messages }));
+      return;
+    }
+
+    if (receivedMessage.startsWith("loadChat:")) {
+      const timestamp = receivedMessage.split(":")[1];
+      const chat = await loadChat(timestamp, userId);
+      ws.send(JSON.stringify({ type: "loadChat", messages: chat }));
+      return;
+    }
+
+    if (receivedMessage === "newChat") {
+      const result = await newChat(userId);
+      ws.send(JSON.stringify({ type: "newChat", success: true }));
       return;
     }
 

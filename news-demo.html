@@ -26,561 +26,711 @@
     <link rel="stylesheet" href="css/stylenews.css" />
 
     <!-- Favicon -->
-    <link href="images/favicon.ico" rel="shortcut icon"/>
+    <link href="images/favicon.ico" rel="shortcut icon" />
 
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Raleway:400,400i,500,500i,600,600i,700,700i,800,800i" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css?family=Raleway:400,400i,500,500i,600,600i,700,700i,800,800i"
+      rel="stylesheet"
+    />
 
     <!-- Stylesheets -->
-    <link rel="stylesheet" href="css/bootstrap.min2.css"/>
-    <link rel="stylesheet" href="css/font-awesome.min2.css"/>
+    <link rel="stylesheet" href="css/bootstrap.min2.css" />
+    <link rel="stylesheet" href="css/font-awesome.min2.css" />
     <link rel="stylesheet" href="css/personal.css" />
     <style>
-        /* General container */
-        .container {
-            width: 100%;
-            max-width: 1170px;
-            margin: 0 auto;
-            padding: 0 15px;
-        }
-        /* Section title */
-        .section-title {
-            text-align: center;
-            margin-bottom: 60px;
-        }
-        .section-title h2 {
-            color: #202020;
-            font-size: 36px;
-            font-weight: 600;
-            margin-bottom: 20px;
-        }
-        .section-title p {
-            color: #707070;
-            line-height: 1.8;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        .mb-0 {
-            margin-bottom: 0 !important;
-        }
+      /* General container */
+      .container {
+        width: 100%;
+        max-width: 1170px;
+        margin: 0 auto;
+        padding: 0 15px;
+      }
+      /* Section title */
+      .section-title {
+        text-align: center;
+        margin-bottom: 60px;
+      }
+      .section-title h2 {
+        color: #202020;
+        font-size: 36px;
+        font-weight: 600;
+        margin-bottom: 20px;
+      }
+      .section-title p {
+        color: #707070;
+        line-height: 1.8;
+        max-width: 800px;
+        margin: 0 auto;
+      }
+      .mb-0 {
+        margin-bottom: 0 !important;
+      }
 
-        /* Course section */
+      /* Course section */
+      .course-section {
+        padding-top: 30px;
+        padding-bottom: 100px;
+      }
+      .course-warp {
+        padding: 0 15px;
+      }
+
+      /* Course filter */
+      .course-filter {
+        list-style: none;
+        padding: 0;
+        text-align: center;
+        margin-bottom: 60px;
+      }
+      .course-filter li {
+        display: inline-block;
+        margin: 0 10px;
+      }
+      .course-filter .control {
+        color: #202020;
+        font-size: 14px;
+        font-weight: 600;
+        text-transform: uppercase;
+        cursor: pointer;
+        padding: 10px 20px;
+        border: 2px solid #e5e5e5;
+        border-radius: 2px;
+        transition: all 0.3s ease;
+      }
+      .course-filter .control:hover {
+        background-color: #00ced1;
+        color: #fff;
+        border-color: #00ced1;
+      }
+      .course-filter .control.active {
+        background-color: #00ced1;
+        color: #fff;
+        border-color: #00ced1;
+      }
+
+      /* Course item */
+      .course-item {
+        background: #fff;
+        -webkit-box-shadow: 0 0 20px rgba(0, 0, 0, 0.07);
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.07);
+        margin-bottom: 30px;
+        transition: all 0.3s ease;
+      }
+      .course-item:hover {
+        transform: scale(1.05); /* Phóng to nhẹ */
+        -webkit-box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
+        box-shadow: 0 0 30px rgba(0, 0, 0, 0.1); /* Tăng bóng đổ */
+      }
+      .course-thumb {
+        height: 200px;
+        position: relative;
+        background-size: cover !important;
+        background-position: center !important;
+      }
+      .course-info {
+        padding: 30px;
+      }
+      .course-text h5 {
+        color: #202020;
+        font-size: 18px;
+        font-weight: 600;
+        margin-bottom: 10px;
+      }
+      .course-text p {
+        color: #707070;
+        margin-bottom: 15px;
+      }
+      .course-text .students {
+        color: #00ced1;
+        font-size: 14px;
+        font-weight: 600;
+      }
+      .course-author {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+      }
+      .ca-pic {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        margin-right: 15px;
+        background-size: cover !important;
+        background-position: center !important;
+      }
+      .course-author p {
+        color: #707070;
+        margin: 0;
+      }
+      .course-author p span {
+        color: #00ced1;
+      }
+
+      /* Responsive */
+      @media (max-width: 991px) {
+        .course-item {
+          margin-bottom: 30px;
+        }
+      }
+      @media (max-width: 767px) {
         .course-section {
-            padding-top: 30px;
-            padding-bottom: 100px;
-        }
-        .course-warp {
-            padding: 0 15px;
-        }
-
-        /* Course filter */
-        .course-filter {
-            list-style: none;
-            padding: 0;
-            text-align: center;
-            margin-bottom: 60px;
+          padding-top: 60px;
+          padding-bottom: 60px;
         }
         .course-filter li {
-            display: inline-block;
-            margin: 0 10px;
+          margin: 5px;
         }
-        .course-filter .control {
-            color: #202020;
-            font-size: 14px;
-            font-weight: 600;
-            text-transform: uppercase;
-            cursor: pointer;
-            padding: 10px 20px;
-            border: 2px solid #e5e5e5;
-            border-radius: 2px;
-            transition: all 0.3s ease;
-        }
-        .course-filter .control:hover {
-    background-color: #00CED1;
-    color: #fff;
-    border-color: #00CED1;
-}
-        .course-filter .control.active {
-    background-color: #00CED1;
-    color: #fff;
-    border-color: #00CED1;
-}
-
-        /* Course item */
+      }
+      @media (max-width: 575px) {
         .course-item {
-            background: #fff;
-            -webkit-box-shadow: 0 0 20px rgba(0, 0, 0, 0.07);
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.07);
-            margin-bottom: 30px;
-            transition: all 0.3s ease;
+          max-width: 300px;
+          margin-left: auto;
+          margin-right: auto;
         }
-        .course-item:hover {
-    transform: scale(1.05); /* Phóng to nhẹ */
-    -webkit-box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
-    box-shadow: 0 0 30px rgba(0, 0, 0, 0.1); /* Tăng bóng đổ */
-}
-        .course-thumb {
-            height: 200px;
-            position: relative;
-            background-size: cover !important;
-            background-position: center !important;
-        }
-        .course-info {
-            padding: 30px;
-        }
-        .course-text h5 {
-            color: #202020;
-            font-size: 18px;
-            font-weight: 600;
-            margin-bottom: 10px;
-        }
-        .course-text p {
-            color: #707070;
-            margin-bottom: 15px;
-        }
-        .course-text .students {
-            color: #00CED1;
-            font-size: 14px;
-            font-weight: 600;
-        }
-        .course-author {
-            display: -webkit-box;
-            display: -ms-flexbox;
-            display: flex;
-            -webkit-box-align: center;
-            -ms-flex-align: center;
-            align-items: center;
-        }
-        .ca-pic {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            margin-right: 15px;
-            background-size: cover !important;
-            background-position: center !important;
-        }
-        .course-author p {
-            color: #707070;
-            margin: 0;
-        }
-        .course-author p span {
-            color: #00CED1;
-        }
+      }
 
-        /* Responsive */
-        @media (max-width: 991px) {
-            .course-item {
-                margin-bottom: 30px;
-            }
-        }
-        @media (max-width: 767px) {
-            .course-section {
-                padding-top: 60px;
-                padding-bottom: 60px;
-            }
-            .course-filter li {
-                margin: 5px;
-            }
-        }
-        @media (max-width: 575px) {
-            .course-item {
-                max-width: 300px;
-                margin-left: auto;
-                margin-right: auto;
-            }
-        }
+      /* Set background utility */
+      .set-bg {
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: top center;
+      }
 
-        /* Set background utility */
-        .set-bg {
-            background-repeat: no-repeat;
-            background-size: cover;
-            background-position: top center;
-        }
-        
-        .text-decoration-none, .text-decoration-none:hover {
-            text-decoration: none 
-            text-decoration: none !important;
-        }
-        .courses__item:hover {
-            transform: scale(1.05);
-            transition: transform 0.3s;
-            cursor: pointer;
-        }
+      .text-decoration-none,
+      .text-decoration-none:hover {
+        text-decoration: none;
+        /* text-decoration: none !important; */
+      }
+      .courses__item:hover {
+        transform: scale(1.05);
+        transition: transform 0.3s;
+        cursor: pointer;
+      }
     </style>
-    
-
   </head>
   <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light bg-transparent" id="gtco-main-nav">
-    <div class="container">
-  <a class="navbar-brand d-flex align-items-center" href="#">
-    <img src="images/logo6.png" alt="Logo" style="width: 40px; height: 40px; border-radius: 50%; margin-right: 10px;">
-    TECHIBOT
-  </a>
+    <nav
+      class="navbar navbar-expand-lg navbar-light bg-light bg-transparent"
+      id="gtco-main-nav"
+    >
+      <div class="container">
+        <a class="navbar-brand d-flex align-items-center" href="#">
+          <img
+            src="images/logo6.png"
+            alt="Logo"
+            style="
+              width: 40px;
+              height: 40px;
+              border-radius: 50%;
+              margin-right: 10px;
+            "
+          />
+          TECHIEBOT
+        </a>
 
-        <button class="navbar-toggler" data-target="#my-nav" onclick="myFunction(this)" data-toggle="collapse"><span
-                class="bar1"></span> <span class="bar2"></span> <span class="bar3"></span></button>
+        <button
+          class="navbar-toggler"
+          data-target="#my-nav"
+          onclick="myFunction(this)"
+          data-toggle="collapse"
+        >
+          <span class="bar1"></span> <span class="bar2"></span>
+          <span class="bar3"></span>
+        </button>
         <div id="my-nav" class="collapse navbar-collapse">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item"><a class="nav-link" href="homepage.html">Home</a></li>
-                <li class="nav-item"><a class="nav-link" href="robo.html">AI ChatBot</a></li>
-                <li class="nav-item"><a class="nav-link" href="studynews.html">News</a></li>
-                <li class="nav-item"><a class="nav-link" href="news-demo.html">Courses</a></li>
-                <li class="nav-item"><a class="nav-link" href="personal.html">User</a></li>
-                <li class="nav-item"><a class="nav-link" href="">About Us</a></li>
-                <li class="nav-item"><a class="nav-link" href="">Contact</a></li>
-            </ul>
-            <form class="form-inline my-2 my-lg-0">
-                 <a href="login.html" class="btn btn-info my-2 my-sm-0 text-uppercase">login</a>
-            </form>
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="homepage.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="robo.html">AI ChatBot</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="studynews.html">News</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="news-demo.html">Courses</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="personal.html">User</a>
+            </li>
+            <li class="nav-item"><a class="nav-link" href="">About Us</a></li>
+            <li class="nav-item"><a class="nav-link" href="">Contact</a></li>
+          </ul>
+          <form class="form-inline my-2 my-lg-0">
+            <a
+              href="login.html"
+              class="btn btn-info my-2 my-sm-0 text-uppercase"
+              >login</a
+            >
+          </form>
         </div>
-    </div>
-</nav>
+      </div>
+    </nav>
     <!-- Course section -->
     <section class="course-section spad">
       <div class="container">
-          <div class="section-title mb-0">
-              <h2>Các khoá học</h2>
-              <p>Đây là các khoá học của các môn theo chương trình giáo dục từ lớp 6 tới lớp 12.</p>
-              <br>
-          </div>
+        <div class="section-title mb-0">
+          <h2>Các khoá học</h2>
+          <p>
+            Đây là các khoá học của các môn theo chương trình giáo dục từ lớp 6
+            tới lớp 12.
+          </p>
+          <br />
+        </div>
       </div>
       <div class="course-warp">
-          <ul class="course-filter controls">
-              <li class="control active" data-filter="all">Tất cả</li>
-              <li class="control" data-filter=".class6">Lớp 6</li>
-              <li class="control" data-filter=".class7">Lớp 7</li>
-              <li class="control" data-filter=".class8">Lớp 8</li>
-              <li class="control" data-filter=".class9">Lớp 9</li>
-              <li class="control" data-filter=".class10">Lớp 10</li>
-              <li class="control" data-filter=".class11">Lớp 11</li>
-              <li class="control" data-filter=".class12">Lớp 12</li>
-          </ul>                                       
-          <div class="row course-items-area">
-              <!-- Lớp 6 -->
-              <div class="mix col-lg-3 col-md-4 col-sm-6 class6">
-                  <div class="course-item">
-                      <div class="course-thumb set-bg" data-setbg="images/courses/nguvan6.jpg"></div>
-                      <div class="course-info">
-                          <div class="course-text">
-                              <h5>Ngữ Văn 6</h5>
-                              <p>Học văn bản, tập làm văn và tiếng Việt</p>
-                              <div class="students">120 Students</div>
-                          </div>
-                          <div class="course-author">
-                              <div class="ca-pic set-bg" data-setbg="images/courses/bg1.jpg"></div>
-                              <p>Nguyễn Văn A, <span>Giáo viên</span></p>
-                          </div>
-                      </div>
-                  </div>
+        <ul class="course-filter controls">
+          <li class="control active" data-filter="all">Tất cả</li>
+          <li class="control" data-filter=".class6">Lớp 6</li>
+          <li class="control" data-filter=".class7">Lớp 7</li>
+          <li class="control" data-filter=".class8">Lớp 8</li>
+          <li class="control" data-filter=".class9">Lớp 9</li>
+          <li class="control" data-filter=".class10">Lớp 10</li>
+          <li class="control" data-filter=".class11">Lớp 11</li>
+          <li class="control" data-filter=".class12">Lớp 12</li>
+        </ul>
+        <div class="row course-items-area">
+          <!-- Lớp 6 -->
+          <div class="mix col-lg-3 col-md-4 col-sm-6 class6">
+            <div class="course-item">
+              <div
+                class="course-thumb set-bg"
+                data-setbg="images/courses/nguvan6.jpg"
+              ></div>
+              <div class="course-info">
+                <div class="course-text">
+                  <h5>Ngữ Văn 6</h5>
+                  <p>Học văn bản, tập làm văn và tiếng Việt</p>
+                  <div class="students">120 Students</div>
+                </div>
+                <div class="course-author">
+                  <div
+                    class="ca-pic set-bg"
+                    data-setbg="images/courses/bg1.jpg"
+                  ></div>
+                  <p>Nguyễn Văn A, <span>Giáo viên</span></p>
+                </div>
               </div>
-              <div class="mix col-lg-3 col-md-4 col-sm-6 class6">
-                  <div class="course-item">
-                      <div class="course-thumb set-bg" data-setbg="images/courses/toan6.png"></div>
-                      <div class="course-info">
-                          <div class="course-text">
-                              <h5>Toán 6</h5>
-                              <p>Số học và hình học cơ bản</p>
-                              <div class="students">120 Students</div>
-                          </div>
-                          <div class="course-author">
-                              <div class="ca-pic set-bg" data-setbg="images/authors/1.jpg"></div>
-                              <p>Nguyễn Văn A, <span>Giáo viên</span></p>
-                          </div>
-                      </div>
-                  </div>
-              </div>
-              <div class="mix col-lg-3 col-md-4 col-sm-6 class6">
-                  <div class="course-item">
-                      <div class="course-thumb set-bg" data-setbg="images/courses/tienganh6.webp"></div>
-                      <div class="course-info">
-                          <div class="course-text">
-                              <h5>Tiếng Anh 6</h5>
-                              <p>Ngữ Pháp và từ vựng cơ bản</p>
-                              <div class="students">120 Students</div>
-                          </div>
-                          <div class="course-author">
-                              <div class="ca-pic set-bg" data-setbg="images/authors/1.jpg"></div>
-                              <p>Nguyễn Văn A, <span>Giáo viên</span></p>
-                          </div>
-                      </div>
-                  </div>
-              </div>
-              <div class="mix col-lg-3 col-md-4 col-sm-6 class6">
-                  <div class="course-item">
-                      <div class="course-thumb set-bg" data-setbg="images/courses/KHTN6.jpg"></div>
-                      <div class="course-info">
-                          <div class="course-text">
-                              <h5>Khoa học tự nhiên 6</h5>
-                              <p>Vật lý, hoá học, sinh học cơ bản</p>
-                              <div class="students">120 Students</div>
-                          </div>
-                          <div class="course-author">
-                              <div class="ca-pic set-bg" data-setbg="images/authors/1.jpg"></div>
-                              <p>Nguyễn Văn A, <span>Giáo viên</span></p>
-                          </div>
-                      </div>
-                  </div>
-              </div>
-              <!-- Lớp 7 -->
-              <div class="mix col-lg-3 col-md-4 col-sm-6 class7">
-                <a href="lessons.html?subject=nguvan7" class="text-decoration-none">
-                    <div class="course-item">
-                        <div class="course-thumb set-bg" data-setbg="images/courses/nguvan7.jpg"></div>
-                        <div class="course-info">
-                            <div class="course-text">
-                                <h5>Ngữ văn 7</h5>
-                                <p>Văn học trung đại và hiện đại</p>
-                                <div class="students">120 Students</div>
-                            </div>
-                            <div class="course-author">
-                                <div class="ca-pic set-bg" data-setbg="images/authors/5.jpg"></div>
-                                <p>Nguyễn Văn A, <span>Giáo viên</span></p>
-                            </div>
-                        </div>
-                    </div>
-                    </a>
-                </div>
-                <div class="mix col-lg-3 col-md-4 col-sm-6 class7">
-                    <a href="lessons.html?subject=toan7" class="text-decoration-none">
-                    <div class="course-item">
-                        <div class="course-thumb set-bg" data-setbg="images/courses/toan7.png"></div>
-                        <div class="course-info">
-                            <div class="course-text">
-                                <h5>Toán 7</h5>
-                                <p>Đại số và hình học nâng cao</p>
-                                <div class="students">120 Students</div>
-                            </div>
-                            <div class="course-author">
-                                <div class="ca-pic set-bg" data-setbg="images/authors/5.jpg"></div>
-                                <p>Nguyễn Văn A, <span>Giáo viên</span></p>
-                            </div>
-                        </div>
-                    </div>
-                    </a>
-                </div>
-                <div class="mix col-lg-3 col-md-4 col-sm-6 class7">
-                    <div class="course-item">
-                        <div class="course-thumb set-bg" data-setbg="images/courses/tienganh7.png"></div>
-                        <div class="course-info">
-                            <div class="course-text">
-                                <h5>Tiếng Anh 7</h5>
-                                <p>Kỹ năng nghe, nói, đọc, viết</p>
-                                <div class="students">120 Students</div>
-                            </div>
-                            <div class="course-author">
-                                <div class="ca-pic set-bg" data-setbg="images/authors/5.jpg"></div>
-                                <p>Nguyễn Văn A, <span>Giáo viên</span></p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="mix col-lg-3 col-md-4 col-sm-6 class7">
-                    <div class="course-item">
-                        <div class="course-thumb set-bg" data-setbg="images/courses/KHTN7.png"></div>
-                        <div class="course-info">
-                            <div class="course-text">
-                                <h5>Khoa học tự nhiên 7</h5>
-                                <p>Khám phá khoa học tự nhiên</p>
-                                <div class="students">120 Students</div>
-                            </div>
-                            <div class="course-author">
-                                <div class="ca-pic set-bg" data-setbg="images/authors/5.jpg"></div>
-                                <p>Nguyễn Văn A, <span>Giáo viên</span></p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Lớp 8 -->
-                <div class="mix col-lg-3 col-md-4 col-sm-6 class8">
-                    <div class="course-item">
-                        <div class="course-thumb set-bg" data-setbg="images/courses/nguvan8.jpg"></div>
-                        <div class="course-info">
-                            <div class="course-text">
-                                <h5>Ngữ văn 8</h5>
-                                <p>Văn học và kỹ năng viết</p>
-                                <div class="students">120 Students</div>
-                            </div>
-                            <div class="course-author">
-                                <div class="ca-pic set-bg" data-setbg="images/authors/1.jpg"></div>
-                                <p>Nguyễn Văn A, <span>Giáo viên</span></p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="mix col-lg-3 col-md-4 col-sm-6 class8">
-                    <div class="course-item">
-                        <div class="course-thumb set-bg" data-setbg="images/courses/toan8.png"></div>
-                        <div class="course-info">
-                            <div class="course-text">
-                                <h5>Toán 8</h5>
-                                <p>Đại số và hình học lớp 8</p>
-                                <div class="students">120 Students</div>
-                            </div>
-                            <div class="course-author">
-                                <div class="ca-pic set-bg" data-setbg="images/authors/1.jpg"></div>
-                                <p>Nguyễn Văn A, <span>Giáo viên</span></p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Lớp 9 -->
-                <div class="mix col-lg-3 col-md-4 col-sm-6 class9">
-                    <div class="course-item">
-                        <div class="course-thumb set-bg" data-setbg="images/courses/nguvan9.jpg"></div>
-                        <div class="course-info">
-                            <div class="course-text">
-                                <h5>Ngữ văn 9</h5>
-                                <p>Chuẩn bị thi vào lớp 10</p>
-                                <div class="students">120 Students</div>
-                            </div>
-                            <div class="course-author">
-                                <div class="ca-pic set-bg" data-setbg="images/authors/3.jpg"></div>
-                                <p>Nguyễn Văn A, <span>Giáo viên</span></p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="mix col-lg-3 col-md-4 col-sm-6 class9">
-                    <div class="course-item">
-                        <div class="course-thumb set-bg" data-setbg="images/courses/toan9.jpg"></div>
-                        <div class="course-info">
-                            <div class="course-text">
-                                <h5>Toán 9</h5>
-                                <p>Đại số và hình học nâng cao</p>
-                                <div class="students">120 Students</div>
-                            </div>
-                            <div class="course-author">
-                                <div class="ca-pic set-bg" data-setbg="images/authors/3.jpg"></div>
-                                <p>Nguyễn Văn A, <span>Giáo viên</span></p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Lớp 10 -->
-                <div class="mix col-lg-3 col-md-4 col-sm-6 class10">
-                    <div class="course-item">
-                        <div class="course-thumb set-bg" data-setbg="images/courses/nguvan10.jpg"></div>
-                        <div class="course-info">
-                            <div class="course-text">
-                                <h5>Ngữ văn 10</h5>
-                                <p>Văn học Việt Nam và thế giới</p>
-                                <div class="students">120 Students</div>
-                          </div>
-                            <div class="course-author">
-                                <div class="ca-pic set-bg" data-setbg="images/authors/5.jpg"></div>
-                                <p>Nguyễn Văn A, <span>Giáo viên</span></p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="mix col-lg-3 col-md-4 col-sm-6 class10">
-                    <div class="course-item">
-                        <div class="course-thumb set-bg" data-setbg="images/courses/toan10.png"></div>
-                        <div class="course-info">
-                            <div class="course-text">
-                                <h5>Toán 10</h5>
-                                <p>Đại số và hình học lớp 10</p>
-                                <div class="students">120 Students</div>
-                            </div>
-                            <div class="course-author">
-                                <div class="ca-pic set-bg" data-setbg="images/authors/5.jpg"></div>
-                                <p>Nguyễn Văn A, <span>Giáo viên</span></p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Lớp 11 -->
-                <div class="mix col-lg-3 col-md-4 col-sm-6 class11">
-                    <div class="course-item">
-                        <div class="course-thumb set-bg" data-setbg="images/courses/nguvan11.webp"></div>
-                        <div class="course-info">
-                            <div class="course-text">
-                                <h5>Ngữ văn 11</h5>
-                                <p>Văn học hiện đại</p>
-                                <div class="students">120 Students</div>
-                            </div>
-                            <div class="course-author">
-                                <div class="ca-pic set-bg" data-setbg="images/authors/7.jpg"></div>
-                                <p>Nguyễn Văn A, <span>Giáo viên</span></p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="mix col-lg-3 col-md-4 col-sm-6 class11">
-                    <div class="course-item">
-                        <div class="course-thumb set-bg" data-setbg="images/courses/toan11.png"></div>
-                        <div class="course-info">
-                            <div class="course-text">
-                                <h5>Toán 11</h5>
-                                <p>Hàm số và hình học không gian</p>
-                                <div class="students">120 Students</div>
-                            </div>
-                            <div class="course-author">
-                                <div class="ca-pic set-bg" data-setbg="images/authors/7.jpg"></div>
-                                <p>Nguyễn Văn A, <span>Giáo viên</span></p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Lớp 12 -->
-                <div class="mix col-lg-3 col-md-4 col-sm-6 class12">
-                    <div class="course-item">
-                        <div class="course-thumb set-bg" data-setbg="images/courses/nguvan12.jpg"></div>
-                        <div class="course-info">
-                            <div class="course-text">
-                                <h5>Ngữ văn 12</h5>
-                                <p>Chuẩn bị thi THPTQG</p>
-                                <div class="students">120 Students</div>
-                            </div>
-                            <div class="course-author">
-                                <div class="ca-pic set-bg" data-setbg="images/authors/1.jpg"></div>
-                                <p>Nguyễn Văn A, <span>Giáo viên</span></p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="mix col-lg-3 col-md-4 col-sm-6 class12">
-                    <div class="course-item">
-                        <div class="course-thumb set-bg" data-setbg="images/courses/toan12.jpg"></div>
-                        <div class="course-info">
-                            <div class="course-text">
-                                <h5>Toán 12</h5>
-                                <p>Lượng giác và tích phân</p>
-                                <div class="students">120 Students</div>
-                            </div>
-                            <div class="course-author">
-                                <div class="ca-pic set-bg" data-setbg="images/authors/1.jpg"></div>
-                                <p>Nguyễn Văn A, <span>Giáo viên</span></p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-              
+            </div>
           </div>
+          <div class="mix col-lg-3 col-md-4 col-sm-6 class6">
+            <div class="course-item">
+              <div
+                class="course-thumb set-bg"
+                data-setbg="images/courses/toan6.png"
+              ></div>
+              <div class="course-info">
+                <div class="course-text">
+                  <h5>Toán 6</h5>
+                  <p>Số học và hình học cơ bản</p>
+                  <div class="students">120 Students</div>
+                </div>
+                <div class="course-author">
+                  <div
+                    class="ca-pic set-bg"
+                    data-setbg="images/authors/1.jpg"
+                  ></div>
+                  <p>Nguyễn Văn A, <span>Giáo viên</span></p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="mix col-lg-3 col-md-4 col-sm-6 class6">
+            <div class="course-item">
+              <div
+                class="course-thumb set-bg"
+                data-setbg="images/courses/tienganh6.webp"
+              ></div>
+              <div class="course-info">
+                <div class="course-text">
+                  <h5>Tiếng Anh 6</h5>
+                  <p>Ngữ Pháp và từ vựng cơ bản</p>
+                  <div class="students">120 Students</div>
+                </div>
+                <div class="course-author">
+                  <div
+                    class="ca-pic set-bg"
+                    data-setbg="images/authors/1.jpg"
+                  ></div>
+                  <p>Nguyễn Văn A, <span>Giáo viên</span></p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="mix col-lg-3 col-md-4 col-sm-6 class6">
+            <div class="course-item">
+              <div
+                class="course-thumb set-bg"
+                data-setbg="images/courses/KHTN6.jpg"
+              ></div>
+              <div class="course-info">
+                <div class="course-text">
+                  <h5>Khoa học tự nhiên 6</h5>
+                  <p>Vật lý, hoá học, sinh học cơ bản</p>
+                  <div class="students">120 Students</div>
+                </div>
+                <div class="course-author">
+                  <div
+                    class="ca-pic set-bg"
+                    data-setbg="images/authors/1.jpg"
+                  ></div>
+                  <p>Nguyễn Văn A, <span>Giáo viên</span></p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Lớp 7 -->
+          <div class="mix col-lg-3 col-md-4 col-sm-6 class7">
+            <a href="lessons.html?subject=nguvan7" class="text-decoration-none">
+              <div class="course-item">
+                <div
+                  class="course-thumb set-bg"
+                  data-setbg="images/courses/nguvan7.jpg"
+                ></div>
+                <div class="course-info">
+                  <div class="course-text">
+                    <h5>Ngữ văn 7</h5>
+                    <p>Văn học trung đại và hiện đại</p>
+                    <div class="students">120 Students</div>
+                  </div>
+                  <div class="course-author">
+                    <div
+                      class="ca-pic set-bg"
+                      data-setbg="images/authors/5.jpg"
+                    ></div>
+                    <p>Nguyễn Văn A, <span>Giáo viên</span></p>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="mix col-lg-3 col-md-4 col-sm-6 class7">
+            <a href="lessons.html?subject=toan7" class="text-decoration-none">
+              <div class="course-item">
+                <div
+                  class="course-thumb set-bg"
+                  data-setbg="images/courses/toan7.png"
+                ></div>
+                <div class="course-info">
+                  <div class="course-text">
+                    <h5>Toán 7</h5>
+                    <p>Đại số và hình học nâng cao</p>
+                    <div class="students">120 Students</div>
+                  </div>
+                  <div class="course-author">
+                    <div
+                      class="ca-pic set-bg"
+                      data-setbg="images/authors/5.jpg"
+                    ></div>
+                    <p>Nguyễn Văn A, <span>Giáo viên</span></p>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="mix col-lg-3 col-md-4 col-sm-6 class7">
+            <div class="course-item">
+              <div
+                class="course-thumb set-bg"
+                data-setbg="images/courses/tienganh7.png"
+              ></div>
+              <div class="course-info">
+                <div class="course-text">
+                  <h5>Tiếng Anh 7</h5>
+                  <p>Kỹ năng nghe, nói, đọc, viết</p>
+                  <div class="students">120 Students</div>
+                </div>
+                <div class="course-author">
+                  <div
+                    class="ca-pic set-bg"
+                    data-setbg="images/authors/5.jpg"
+                  ></div>
+                  <p>Nguyễn Văn A, <span>Giáo viên</span></p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="mix col-lg-3 col-md-4 col-sm-6 class7">
+            <div class="course-item">
+              <div
+                class="course-thumb set-bg"
+                data-setbg="images/courses/KHTN7.png"
+              ></div>
+              <div class="course-info">
+                <div class="course-text">
+                  <h5>Khoa học tự nhiên 7</h5>
+                  <p>Khám phá khoa học tự nhiên</p>
+                  <div class="students">120 Students</div>
+                </div>
+                <div class="course-author">
+                  <div
+                    class="ca-pic set-bg"
+                    data-setbg="images/authors/5.jpg"
+                  ></div>
+                  <p>Nguyễn Văn A, <span>Giáo viên</span></p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Lớp 8 -->
+          <div class="mix col-lg-3 col-md-4 col-sm-6 class8">
+            <div class="course-item">
+              <div
+                class="course-thumb set-bg"
+                data-setbg="images/courses/nguvan8.jpg"
+              ></div>
+              <div class="course-info">
+                <div class="course-text">
+                  <h5>Ngữ văn 8</h5>
+                  <p>Văn học và kỹ năng viết</p>
+                  <div class="students">120 Students</div>
+                </div>
+                <div class="course-author">
+                  <div
+                    class="ca-pic set-bg"
+                    data-setbg="images/authors/1.jpg"
+                  ></div>
+                  <p>Nguyễn Văn A, <span>Giáo viên</span></p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="mix col-lg-3 col-md-4 col-sm-6 class8">
+            <div class="course-item">
+              <div
+                class="course-thumb set-bg"
+                data-setbg="images/courses/toan8.png"
+              ></div>
+              <div class="course-info">
+                <div class="course-text">
+                  <h5>Toán 8</h5>
+                  <p>Đại số và hình học lớp 8</p>
+                  <div class="students">120 Students</div>
+                </div>
+                <div class="course-author">
+                  <div
+                    class="ca-pic set-bg"
+                    data-setbg="images/authors/1.jpg"
+                  ></div>
+                  <p>Nguyễn Văn A, <span>Giáo viên</span></p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Lớp 9 -->
+          <div class="mix col-lg-3 col-md-4 col-sm-6 class9">
+            <div class="course-item">
+              <div
+                class="course-thumb set-bg"
+                data-setbg="images/courses/nguvan9.jpg"
+              ></div>
+              <div class="course-info">
+                <div class="course-text">
+                  <h5>Ngữ văn 9</h5>
+                  <p>Chuẩn bị thi vào lớp 10</p>
+                  <div class="students">120 Students</div>
+                </div>
+                <div class="course-author">
+                  <div
+                    class="ca-pic set-bg"
+                    data-setbg="images/authors/3.jpg"
+                  ></div>
+                  <p>Nguyễn Văn A, <span>Giáo viên</span></p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="mix col-lg-3 col-md-4 col-sm-6 class9">
+            <div class="course-item">
+              <div
+                class="course-thumb set-bg"
+                data-setbg="images/courses/toan9.jpg"
+              ></div>
+              <div class="course-info">
+                <div class="course-text">
+                  <h5>Toán 9</h5>
+                  <p>Đại số và hình học nâng cao</p>
+                  <div class="students">120 Students</div>
+                </div>
+                <div class="course-author">
+                  <div
+                    class="ca-pic set-bg"
+                    data-setbg="images/authors/3.jpg"
+                  ></div>
+                  <p>Nguyễn Văn A, <span>Giáo viên</span></p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Lớp 10 -->
+          <div class="mix col-lg-3 col-md-4 col-sm-6 class10">
+            <div class="course-item">
+              <div
+                class="course-thumb set-bg"
+                data-setbg="images/courses/nguvan10.jpg"
+              ></div>
+              <div class="course-info">
+                <div class="course-text">
+                  <h5>Ngữ văn 10</h5>
+                  <p>Văn học Việt Nam và thế giới</p>
+                  <div class="students">120 Students</div>
+                </div>
+                <div class="course-author">
+                  <div
+                    class="ca-pic set-bg"
+                    data-setbg="images/authors/5.jpg"
+                  ></div>
+                  <p>Nguyễn Văn A, <span>Giáo viên</span></p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="mix col-lg-3 col-md-4 col-sm-6 class10">
+            <div class="course-item">
+              <div
+                class="course-thumb set-bg"
+                data-setbg="images/courses/toan10.png"
+              ></div>
+              <div class="course-info">
+                <div class="course-text">
+                  <h5>Toán 10</h5>
+                  <p>Đại số và hình học lớp 10</p>
+                  <div class="students">120 Students</div>
+                </div>
+                <div class="course-author">
+                  <div
+                    class="ca-pic set-bg"
+                    data-setbg="images/authors/5.jpg"
+                  ></div>
+                  <p>Nguyễn Văn A, <span>Giáo viên</span></p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Lớp 11 -->
+          <div class="mix col-lg-3 col-md-4 col-sm-6 class11">
+            <div class="course-item">
+              <div
+                class="course-thumb set-bg"
+                data-setbg="images/courses/nguvan11.webp"
+              ></div>
+              <div class="course-info">
+                <div class="course-text">
+                  <h5>Ngữ văn 11</h5>
+                  <p>Văn học hiện đại</p>
+                  <div class="students">120 Students</div>
+                </div>
+                <div class="course-author">
+                  <div
+                    class="ca-pic set-bg"
+                    data-setbg="images/authors/7.jpg"
+                  ></div>
+                  <p>Nguyễn Văn A, <span>Giáo viên</span></p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="mix col-lg-3 col-md-4 col-sm-6 class11">
+            <div class="course-item">
+              <div
+                class="course-thumb set-bg"
+                data-setbg="images/courses/toan11.png"
+              ></div>
+              <div class="course-info">
+                <div class="course-text">
+                  <h5>Toán 11</h5>
+                  <p>Hàm số và hình học không gian</p>
+                  <div class="students">120 Students</div>
+                </div>
+                <div class="course-author">
+                  <div
+                    class="ca-pic set-bg"
+                    data-setbg="images/authors/7.jpg"
+                  ></div>
+                  <p>Nguyễn Văn A, <span>Giáo viên</span></p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Lớp 12 -->
+          <div class="mix col-lg-3 col-md-4 col-sm-6 class12">
+            <div class="course-item">
+              <div
+                class="course-thumb set-bg"
+                data-setbg="images/courses/nguvan12.jpg"
+              ></div>
+              <div class="course-info">
+                <div class="course-text">
+                  <h5>Ngữ văn 12</h5>
+                  <p>Chuẩn bị thi THPTQG</p>
+                  <div class="students">120 Students</div>
+                </div>
+                <div class="course-author">
+                  <div
+                    class="ca-pic set-bg"
+                    data-setbg="images/authors/1.jpg"
+                  ></div>
+                  <p>Nguyễn Văn A, <span>Giáo viên</span></p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="mix col-lg-3 col-md-4 col-sm-6 class12">
+            <div class="course-item">
+              <div
+                class="course-thumb set-bg"
+                data-setbg="images/courses/toan12.jpg"
+              ></div>
+              <div class="course-info">
+                <div class="course-text">
+                  <h5>Toán 12</h5>
+                  <p>Lượng giác và tích phân</p>
+                  <div class="students">120 Students</div>
+                </div>
+                <div class="course-author">
+                  <div
+                    class="ca-pic set-bg"
+                    data-setbg="images/authors/1.jpg"
+                  ></div>
+                  <p>Nguyễn Văn A, <span>Giáo viên</span></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-  </section>
-  <!-- Course section end -->
+    </section>
+    <!-- Course section end -->
     <div class="fixed-buttons">
-      <button id="dark-mode-toggle" class="btn btn-secondary custom-btn">Chuyển Giao Diện</button>
-      <a href="#profile"><button id="scroll-top-btn" class="btn btn-primary custom-btn"><i class="fa fa-arrow-up"></i></button></a>
+      <button id="dark-mode-toggle" class="btn btn-secondary custom-btn">
+        Chuyển Giao Diện
+      </button>
+      <a href="#profile"
+        ><button id="scroll-top-btn" class="btn btn-primary custom-btn">
+          <i class="fa fa-arrow-up"></i></button
+      ></a>
     </div>
-  <!-- JavaScript -->
-  <script src="js/jquery-3.2.1.min.js"></script>
-  <script src="js/bootstrap.min2.js"></script>
-  <script src="js/mixitup.min.js"></script>
-  <script src="js/main2.js"></script>
-  <script>
+    <!-- JavaScript -->
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="js/bootstrap.min2.js"></script>
+    <script src="js/mixitup.min.js"></script>
+    <script src="js/main2.js"></script>
+    <script>
       // Initialize MixItUp with animations disabled
-      $(document).ready(function(){
-          var mixer = mixitup('.course-items-area', {
-              animation: {
-                duration: 400, /* Thời gian hiệu ứng (mili giây) */
-                effects: 'fade scale(0.5)' /* Hiệu ứng mờ dần và thu phóng */
-              }
-          });
+      $(document).ready(function () {
+        var mixer = mixitup(".course-items-area", {
+          animation: {
+            duration: 400 /* Thời gian hiệu ứng (mili giây) */,
+            effects: "fade scale(0.5)" /* Hiệu ứng mờ dần và thu phóng */,
+          },
+        });
       });
-  </script>
+    </script>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="js/jquery-3.3.1.slim.min.js"></script>
@@ -590,5 +740,40 @@
     <script src="owl-carousel/owl.carousel.min.js"></script>
     <script src="js/main.js"></script>
     <script src="js/personal.js"></script>
-  <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'93f34b540c45038b',t:'MTc0NzE1MTI0NS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+    <script>
+      (function () {
+        function c() {
+          var b = a.contentDocument || a.contentWindow.document;
+          if (b) {
+            var d = b.createElement("script");
+            d.innerHTML =
+              "window.__CF$cv$params={r:'93f34b540c45038b',t:'MTc0NzE1MTI0NS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";
+            b.getElementsByTagName("head")[0].appendChild(d);
+          }
+        }
+        if (document.body) {
+          var a = document.createElement("iframe");
+          a.height = 1;
+          a.width = 1;
+          a.style.position = "absolute";
+          a.style.top = 0;
+          a.style.left = 0;
+          a.style.border = "none";
+          a.style.visibility = "hidden";
+          document.body.appendChild(a);
+          if ("loading" !== document.readyState) c();
+          else if (window.addEventListener)
+            document.addEventListener("DOMContentLoaded", c);
+          else {
+            var e = document.onreadystatechange || function () {};
+            document.onreadystatechange = function (b) {
+              e(b);
+              "loading" !== document.readyState &&
+                ((document.onreadystatechange = e), c());
+            };
+          }
+        }
+      })();
+    </script>
+  </body>
 </html>
