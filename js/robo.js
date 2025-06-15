@@ -1,4 +1,13 @@
-// Thiết lập Three.js
+// Khai báo biến toàn cục (được định nghĩa từ chatbox.js)
+let isChatMode = true;
+let isListening = false; // Sẽ được cập nhật từ chatbox.js
+
+// Cập nhật kích thước renderer khi cửa sổ thay đổi
+window.addEventListener("resize", () => {
+  camera.aspect = window.innerWidth / window.innerHeight;
+  camera.updateProjectionMatrix();
+  renderer.setSize(window.innerWidth, window.innerHeight);
+});
 const scene = new THREE.Scene();
 // Xóa nền của scene
 scene.background = null;
@@ -25,15 +34,43 @@ scene.add(directionalLight);
 
 // Tải mô hình 3D
 const loader = new THREE.GLTFLoader();
+let model = null;
+let mixer = null;
+let greetingAction = null;
+let idleAction = null;
+
 loader.load(
-  // Sử dụng mô hình TechieBot.glb
-  "model/TechieBot.glb",
+  "3d/TechieBotHi.glb",
   (gltf) => {
-    const model = gltf.scene;
+    model = gltf.scene;
     scene.add(model);
-    // Điều chỉnh vị trí/tỷ lệ mô hình
-    model.position.set(0, 0, 0);
-    model.scale.set(1, 1, 1);
+    model.position.set(0, 1, 0);
+    model.scale.set(2.5, 2.5, 2.5);
+
+    mixer = new THREE.AnimationMixer(model);
+
+    // Debug và gán animation
+    gltf.animations.forEach((clip) => {
+      const action = mixer.clipAction(clip);
+      console.log("Available animation:", clip.name); // Log để kiểm tra tên
+      if (clip.name.toLowerCase().includes("armatureaction")) {
+        // Khớp với tên từ glTF Viewer
+        greetingAction = action;
+      } else if (clip.name.toLowerCase().includes("idle")) {
+        idleAction = action;
+      }
+    });
+
+    if (greetingAction) {
+      console.log("Greeting animation loaded successfully:", greetingAction);
+    } else {
+      console.warn("No greeting animation found. Check animation name.");
+    }
+
+    if (idleAction) idleAction.play();
+    else if (greetingAction) greetingAction.play(); // Phát greeting nếu không có idle
+
+    animate();
   },
   (xhr) => {
     console.log((xhr.loaded / xhr.total) * 100 + "% đã tải");
@@ -49,13 +86,42 @@ camera.position.z = 5;
 // Vòng lặp animation
 function animate() {
   requestAnimationFrame(animate);
+  if (mixer) mixer.update(0.016); // Cập nhật animation
   renderer.render(scene, camera);
 }
-animate();
+// Hàm phát animation chào
+window.playRobotGreeting = function () {
+  if (greetingAction) {
+    console.log("Playing greeting animation");
+    if (idleAction) idleAction.stop();
+    greetingAction.reset().play(); // Phát animation chào
+    setTimeout(() => {
+      if (idleAction && !isListening) idleAction.play(); // Quay lại idle
+    }, 2000); // Điều chỉnh thời gian dựa trên độ dài animation (2 giây mặc định)
+  } else {
+    console.warn("Greeting action not available");
+  }
+};
 
-// Xử lý thay đổi kích thước cửa sổ
-window.addEventListener("resize", () => {
-  camera.aspect = window.innerWidth / window.innerHeight;
-  camera.updateProjectionMatrix();
-  renderer.setSize(window.innerWidth, window.innerHeight);
-});
+// Hàm dừng animation
+window.stopRobotAnimation = function () {
+  if (greetingAction) greetingAction.stop();
+  if (idleAction) idleAction.stop();
+};
+
+// Hàm tiếp tục animation
+window.playRobotAnimation = function () {
+  if (idleAction && !isListening) {
+    idleAction.play();
+  }
+};
+
+// Xuất hàm speakText
+window.speakText = function (text) {
+  const utterance = new SpeechSynthesisUtterance(text);
+  utterance.lang = "vi-VN";
+  utterance.volume = 1;
+  utterance.rate = 1;
+  utterance.pitch = 1;
+  speechSynthesis.speak(utterance);
+};
