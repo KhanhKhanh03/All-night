@@ -1,24 +1,24 @@
-// Initialize post data
+// Initialize post data with simulated comments
 let postData = JSON.parse(localStorage.getItem('postData')) || {
-  '1': { likes: 12, comments: 5, shares: 3, liked: false, commentList: ['Nguyễn Anh Kiệt: Đáp án là A!'] },
-  '2': { likes: 8, comments: 2, shares: 1, liked: false, commentList: ['Mai Cam Thảo: Có khó thật!'] },
-  '3': { likes: 15, comments: 7, shares: 4, liked: false, commentList: ['Nguyễn Đăng Khôi: Chúc mừng!'] },
-  '4': { likes: 10, comments: 3, shares: 2, liked: false, commentList: ['Jenifer Phạm: Tôi có thể giúp!'] }
+  '1': { likes: 12, comments: 5, shares: 3, liked: false, commentList: ['Nguyễn Anh Kiệt: Đáp án là A!', 'Mai Cam Thảo: Mình nghĩ là B, bạn thử kiểm tra lại xem!', 'Nguyễn Đăng Khôi: Có ai giải chi tiết không?', 'Kim Anh Nguyễn Cửu: Cảm ơn bạn đã đăng bài!', 'Hà My: Câu này khó thật!'] },
+  '2': { likes: 8, comments: 2, shares: 1, liked: false, commentList: ['Mai Cam Thảo: Có khó thật!', 'Jenifer Phạm: Bạn inbox mình mình giải cho!'] },
+  '3': { likes: 15, comments: 7, shares: 4, liked: false, commentList: ['Nguyễn Đăng Khôi: Chúc mừng!', 'Huỳnh Nguyên Khánh: Bài này hay lắm!', 'Đức Anh: Có tài liệu gì hay share mình với!', 'Vo Dinh Phu: Cảm ơn bạn!', 'Châu Linh: Mình cũng đang tìm hiểu!', 'Minh Duc Do: Tuyệt vời!', 'Đặng Tiểu Phương: Có ai biết thêm không?'] },
+  '4': { likes: 10, comments: 3, shares: 2, liked: false, commentList: ['Jenifer Phạm: Tôi có thể giúp!', 'Nguyễn Quốc Duy: Cảm ơn bạn nhiều!', 'Huỳnh Nguyên Khánh: Bài này giải thế nào vậy?'] }
 };
 localStorage.setItem('postData', JSON.stringify(postData));
 
 // Simulated additional posts
 const additionalPosts = {
   global: [
-    { id: 5, avatar: 'images/avt6.jpg', author: 'Nguyễn Đăng Khôi', date: '2025-05-11', content: 'Hôm nay mình học được cách sử dụng HTML!', image: 'images/pic2.jpg', likes: 5, comments: 1, shares: 0, liked: false, commentList: ['Huỳnh Nguyên Khánh: Tuyệt vời!'] },
+    { id: 5, avatar: 'images/avt6.jpg', author: 'Nguyễn Đăng Khôi', date: '2025-05-11', content: 'Hôm nay mình học được cách sử dụng HTML!', image: 'images/pic2.jpg', likes: 5, comments: 1, shares: 0, liked: false, commentList: ['Huỳnh Nguyên Khánh: Tuyệt vời!', 'Mai Cam Thảo: Cố lên bạn!'] },
     { id: 6, avatar: 'images/avt8.jpg', author: 'Mai Cam Thảo', date: '2025-05-12', content: 'Ai biết cách làm bài tập này không?', image: 'images/de3.png', likes: 3, comments: 0, shares: 0, liked: false, commentList: [] },
-    { id: 7, avatar: 'images/avt9.jpg', author: 'Kim Anh Nguyễn Cửu', date: '2025-05-13', content: 'Mình vừa học xong CSS!', image: 'images/pic3.jpg', likes: 7, comments: 2, shares: 1, liked: false, commentList: ['Nguyễn Quốc Duy: Đẹp lắm!'] },
+    { id: 7, avatar: 'images/avt9.jpg', author: 'Kim Anh Nguyễn Cửu', date: '2025-05-13', content: 'Mình vừa học xong CSS!', image: 'images/pic3.jpg', likes: 7, comments: 2, shares: 1, liked: false, commentList: ['Nguyễn Quốc Duy: Đẹp lắm!', 'Hà My: Có ví dụ nào hay không?'] },
     { id: 8, avatar: 'images/avt10.jpg', author: 'Jenifer Phạm', date: '2025-05-14', content: 'Python thật thú vị!', image: '', likes: 4, comments: 1, shares: 0, liked: false, commentList: ['Nguyễn Anh Kiệt: Đồng ý!'] }
   ],
   personal: [
-    { id: 5, avatar: 'images/avt4.jpg', author: 'Nguyễn Quốc Duy', date: '2025-05-06', content: 'Học CSS thật thú vị!', image: 'images/pic3.jpg', likes: 9, comments: 2, shares: 1, liked: false, commentList: ['Mai Cam Thảo: Đẹp quá!'] },
+    { id: 5, avatar: 'images/avt4.jpg', author: 'Nguyễn Quốc Duy', date: '2025-05-06', content: 'Học CSS thật thú vị!', image: 'images/pic3.jpg', likes: 9, comments: 2, shares: 1, liked: false, commentList: ['Mai Cam Thảo: Đẹp quá!', 'Nguyễn Đăng Khôi: Bạn làm được gì hay ho chưa?'] },
     { id: 6, avatar: 'images/avt4.jpg', author: 'Nguyễn Quốc Duy', date: '2025-05-05', content: 'Mình đang tìm tài liệu học JavaScript!', image: '', likes: 6, comments: 1, shares: 0, liked: false, commentList: ['Nguyễn Đăng Khôi: Có thể thử W3Schools!'] },
-    { id: 7, avatar: 'images/avt4.jpg', author: 'Nguyễn Quốc Duy', date: '2025-05-04', content: 'Hôm nay học React.js!', image: 'images/pic4.png', likes: 8, comments: 3, shares: 2, liked: false, commentList: ['Jenifer Phạm: Hay lắm!', 'Huỳnh Nguyên Khánh: Cố lên!'] },
+    { id: 7, avatar: 'images/avt4.jpg', author: 'Nguyễn Quốc Duy', date: '2025-05-04', content: 'Hôm nay học React.js!', image: 'images/pic4.png', likes: 8, comments: 3, shares: 2, liked: false, commentList: ['Jenifer Phạm: Hay lắm!', 'Huỳnh Nguyên Khánh: Cố lên!', 'Đức Anh: Có khó không bạn?'] },
     { id: 8, avatar: 'images/avt4.jpg', author: 'Nguyễn Quốc Duy', date: '2025-05-03', content: 'Đang ôn thi Ngữ Văn 12!', image: 'images/pic5.png', likes: 5, comments: 1, shares: 1, liked: false, commentList: ['Nguyễn Anh Kiệt: Chúc may mắn!'] }
   ]
 };
@@ -88,7 +88,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // Function to create post modal
   function createPostModal() {
-    console.log('Creating post modal'); // Debug log
     const modal = document.createElement('div');
     modal.className = 'modal fade';
     modal.id = 'createPostModal';
@@ -114,32 +113,22 @@ document.addEventListener('DOMContentLoaded', function () {
     document.body.appendChild(modal);
 
     // Initialize Quill editor
-    try {
-      const quill = new Quill('#post-editor', {
-        theme: 'snow',
-        modules: {
-          toolbar: [
-            ['bold', 'italic', 'underline'],
-            ['link'],
-            [{ 'list': 'ordered' }, { 'list': 'bullet' }],
-            ['clean']
-          ]
-        },
-        placeholder: 'Bạn đang nghĩ gì?'
-      });
-      console.log('Quill editor initialized'); // Debug log
-    } catch (error) {
-      console.error('Quill initialization failed:', error);
-    }
+    const quill = new Quill('#post-editor', {
+      theme: 'snow',
+      modules: {
+        toolbar: [
+          ['bold', 'italic', 'underline'],
+          ['link'],
+          [{ 'list': 'ordered' }, { 'list': 'bullet' }],
+          ['clean']
+        ]
+      },
+      placeholder: 'Bạn đang nghĩ gì?'
+    });
 
-    // Show modal with Bootstrap
-    try {
-      $(modal).modal('show');
-      gsap.from(modal.querySelector('.modal-dialog'), { scale: 0.5, opacity: 0, duration: 0.5, ease: 'back.out' });
-      console.log('Modal shown'); // Debug log
-    } catch (error) {
-      console.error('Modal show failed:', error);
-    }
+    // Show modal with animation
+    $(modal).modal('show');
+    gsap.from(modal.querySelector('.modal-dialog'), { scale: 0.5, opacity: 0, duration: 0.5, ease: 'back.out' });
 
     // Image preview
     const fileInput = modal.querySelector('#post-image-upload');
@@ -174,16 +163,13 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     $(modal).on('hidden.bs.modal', () => {
-      console.log('Modal hidden'); // Debug log
       modal.remove();
     });
   }
 
   // Bind create post modal to both buttons
   document.querySelectorAll('.create-post, #create-post-btn').forEach(btn => {
-    console.log('Binding click event to button:', btn); // Debug log
     btn.addEventListener('click', () => {
-      console.log('Button clicked:', btn); // Debug log
       createPostModal();
     });
   });
@@ -271,10 +257,10 @@ function handleComment() {
           <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
         </div>
         <div class="modal-body">
-          <div class="comment-list mb-3" style="max-height: 200px; overflow-y: auto;">
-            ${post.commentList.length > 0 ? post.commentList.map(comment => `<p>${comment}</p>`).join('') : '<p>Chưa có bình luận nào.</p>'}
+          <div class="comment-list mb-3" style="max-height: 300px; overflow-y: auto;">
+            ${post.commentList.length > 0 ? post.commentList.map(comment => `<p class="comment-item">${comment}</p>`).join('') : '<p class="comment-item">Chưa có bình luận nào.</p>'}
           </div>
-          <textarea class="form-control mb-3" rows="2" placeholder="Viết bình luận..."></textarea>
+          <textarea class="form-control mb-3" rows="3" placeholder="Viết bình luận..."></textarea>
         </div>
         <div class="modal-footer">
           <button class="btn btn-secondary" data-bs-dismiss="modal">Hủy</button>
@@ -291,7 +277,7 @@ function handleComment() {
     const commentText = modal.querySelector('textarea').value.trim();
     if (commentText) {
       post.comments++;
-      const userName = 'Huỳnh Nguyên Khánh';
+      const userName = 'Nguyễn Quốc Duy'; // Simulated logged-in user
       const newComment = `<strong>${userName}:</strong> ${commentText}`;
       post.commentList.push(newComment);
       postData[postId] = post;
@@ -299,6 +285,7 @@ function handleComment() {
 
       const commentSection = document.querySelector(`.comments[data-post-id="${postId}"]`);
       const newCommentElement = document.createElement('p');
+      newCommentElement.className = 'comment-item';
       newCommentElement.innerHTML = newComment;
       commentSection.appendChild(newCommentElement);
       gsap.from(newCommentElement, { opacity: 0, y: 20, duration: 0.5, ease: 'power2.out' });
@@ -321,28 +308,58 @@ function handleShare() {
   const postId = this.getAttribute('data-post-id');
   let post = postData[postId];
   const shareUrl = `https://techibot.com/post/${postId}`;
-  if (navigator.share) {
-    navigator.share({
-      title: 'Chia sẻ bài đăng từ TechiBot',
-      text: 'Xem bài đăng này trên TechiBot!',
-      url: shareUrl
-    }).then(() => {
+  
+  const modal = document.createElement('div');
+  modal.className = 'modal fade';
+  modal.innerHTML = `
+    <div class="modal-dialog">
+      <div class="modal-content bg-white">
+        <div class="modal-header">
+          <h5 class="modal-title text-primary">Chia Sẻ Bài Đăng</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <p>Chia sẻ bài đăng này lên:</p>
+          <div class="share-options d-flex flex-column gap-3">
+            <a href="https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(shareUrl)}" target="_blank" class="btn btn-primary share-option">Chia sẻ lên Facebook</a>
+            <a href="https://twitter.com/intent/tweet?url=${encodeURIComponent(shareUrl)}&text=Xem bài đăng này trên TechiBot!" target="_blank" class="btn btn-info share-option">Chia sẻ lên Twitter</a>
+            <button class="btn btn-secondary share-option copy-link" data-url="${shareUrl}">Sao chép liên kết</button>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-secondary" data-bs-dismiss="modal">Hủy</button>
+        </div>
+      </div>
+    </div>
+  `;
+  document.body.appendChild(modal);
+  $(modal).modal('show');
+  gsap.from(modal.querySelector('.modal-dialog'), { scale: 0.5, opacity: 0, duration: 0.5, ease: 'back.out' });
+
+  modal.querySelector('.copy-link').addEventListener('click', () => {
+    navigator.clipboard.writeText(shareUrl).then(() => {
+      alert('Đã sao chép liên kết!');
       post.shares++;
-      this.querySelector('.share-count').textContent = post.shares;
-      gsap.fromTo(this.querySelector('.share-count'), { scale: 1 }, { scale: 1.5, duration: 0.3, ease: 'power2.out', onComplete: () => gsap.to(this.querySelector('.share-count'), { scale: 1, duration: 0.3 }) });
+      document.querySelector(`.share-btn[data-post-id="${postId}"] .share-count`).textContent = post.shares;
+      postData[postId] = post;
+      localStorage.setItem('postData', JSON.stringify(postData));
+      addNotification('Bạn đã sao chép liên kết bài đăng!');
+      $(modal).modal('hide');
+    });
+  });
+
+  modal.querySelectorAll('.share-option:not(.copy-link)').forEach(link => {
+    link.addEventListener('click', () => {
+      post.shares++;
+      document.querySelector(`.share-btn[data-post-id="${postId}"] .share-count`).textContent = post.shares;
+      gsap.fromTo(document.querySelector(`.share-btn[data-post-id="${postId}"] .share-count`), { scale: 1 }, { scale: 1.5, duration: 0.3, ease: 'power2.out', onComplete: () => gsap.to(document.querySelector(`.share-btn[data-post-id="${postId}"] .share-count`), { scale: 1, duration: 0.3 }) });
       postData[postId] = post;
       localStorage.setItem('postData', JSON.stringify(postData));
       addNotification('Bạn đã chia sẻ một bài đăng!');
-    }).catch(err => console.error('Error sharing:', err));
-  } else {
-    prompt('Chia sẻ bài đăng qua link:', shareUrl);
-    post.shares++;
-    this.querySelector('.share-count').textContent = post.shares;
-    gsap.fromTo(this.querySelector('.share-count'), { scale: 1 }, { scale: 1.5, duration: 0.3, ease: 'power2.out', onComplete: () => gsap.to(this.querySelector('.share-count'), { scale: 1, duration: 0.3 }) });
-    postData[postId] = post;
-    localStorage.setItem('postData', JSON.stringify(postData));
-    addNotification('Bạn đã chia sẻ một bài đăng!');
-  }
+    });
+  });
+
+  $(modal).on('hidden.bs.modal', () => modal.remove());
 }
 
 function handleEditPost(e) {
@@ -424,7 +441,7 @@ function savePost(content, imageUrl) {
   const newPost = {
     id: newPostId,
     avatar: 'images/avt4.jpg',
-    author: 'Huỳnh Nguyên Khánh',
+    author: 'Nguyễn Quốc Duy',
     date: new Date().toISOString().slice(0, 10),
     content,
     image: imageUrl,

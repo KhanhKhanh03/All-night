@@ -36,15 +36,6 @@ document.getElementById('recharge-btn').addEventListener('click', function () {
   gsap.from(donateInput, { opacity: 0, y: 20, duration: 0.5, ease: 'power2.out' });
 });
 
-// Cancel donation
-document.getElementById('cancel-donate').addEventListener('click', function () {
-  const donateInput = document.getElementById('donate-input');
-  gsap.to(donateInput, { opacity: 0, y: 20, duration: 0.5, ease: 'power2.out', onComplete: () => {
-    donateInput.style.display = 'none';
-    document.getElementById('donate-amount').value = ''; // Reset input
-  }});
-});
-
 // Confirm donation
 document.getElementById('confirm-donate').addEventListener('click', function () {
   const donateAmount = parseInt(document.getElementById('donate-amount').value);
@@ -56,13 +47,8 @@ document.getElementById('confirm-donate').addEventListener('click', function () 
     return;
   }
 
-  if (donateAmount > currentCoins) {
-    alert('Bạn không đủ xu để ủng hộ! Số xu hiện tại: ' + currentCoins);
-    return;
-  }
-
-  // Update coin count (simulated)
-  currentCoins -= donateAmount;
+  // Update coin count by adding the donated amount
+  currentCoins += donateAmount;
   currentCoinsElement.textContent = currentCoins;
 
   // Hide donation input
@@ -73,7 +59,7 @@ document.getElementById('confirm-donate').addEventListener('click', function () 
   }});
 
   // Show success message
-  alert(`Bạn đã ủng hộ thành công ${donateAmount} xu cho Nguyễn Quốc Duy!`);
+  alert(`Bạn đã nhận thành công ${donateAmount} xu! Số xu hiện tại: ${currentCoins}`);
 });
 
 // Dark mode toggle
