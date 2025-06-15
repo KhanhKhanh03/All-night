@@ -20,8 +20,49 @@
     <link rel="stylesheet" href="solution/css/homepage.css">
     <title>TECHIBOT - AI practice</title>
     <style>
+  body.dark-mode {
+    background-color: #1a1a2e;
+    color: #ffffff;
+  }
 
-    </style>
+  body.dark-mode *,
+  body.dark-mode p,
+  body.dark-mode h1,
+  body.dark-mode h2,
+  body.dark-mode h3,
+  body.dark-mode h4,
+  body.dark-mode h5,
+  body.dark-mode h6,
+  body.dark-mode a,
+  body.dark-mode span,
+  body.dark-mode li,
+  body.dark-mode .card-text,
+  body.dark-mode .card-title {
+    color: #ffffff !important;
+  }
+
+  body.dark-mode .card {
+    background-color: #2a2a40;
+  }
+
+  body.dark-mode footer,
+  body.dark-mode #gtco-footer {
+    background-color: #111;
+  }
+
+  body.dark-mode .gtco-banner-area {
+    background-image: url('Test/images/background5.jpg');
+    background-size: cover;
+    background-position: center;
+  }
+
+  body.dark-mode .footer-column ul li a,
+  body.dark-mode .footer-bottom p {
+    color: #ccc !important;
+  }
+</style>
+
+
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-light bg-light bg-transparent" id="gtco-main-nav">
@@ -482,5 +523,11 @@ Bao gồm ngữ pháp, từ vựng và cả 4 kỹ năng; tập trung vào cách
 <script src="js/bootstrap.min.js"></script>
 <script src="owl-carousel/owl.carousel.min.js"></script>
 <script src="solution/js/homepage.js"></script>
+<script>
+  document.getElementById('dark-mode-toggle').addEventListener('click', function () {
+    document.body.classList.toggle('dark-mode');
+  });
+</script>
+
 </body>
 </html>
