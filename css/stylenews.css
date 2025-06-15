@@ -154,3 +154,326 @@ body {
     height: 390px;
   }
 }
+
+@import url("https://fonts.googleapis.com/css?family=Rubik:400,400i,500,600,700,800display=swap");
+/***transition***/
+:root {
+  --main-color: #1c42df;
+  --heading-color: #201654;
+  --paragraph-color: #565872;
+  --search-bg-color: #086ed5;
+  --heading-font: "Rubik", sans-serif;
+  --body-font: "Rubik", sans-serif;
+  --body-font-size: 16px;
+  --line-height30: 1.7;
+}
+
+@media all and (max-width: 1199px) {
+  body,
+  .single-post-wrap .details p {
+    font-size: 15px;
+  }
+  .post-meta-single ul li {
+    font-size: 13px;
+  }
+  .single-post-wrap .thumb img {
+    width: 100%;
+  }
+  .single-post-wrap.style-overlay .details {
+    padding: 18px 14px;
+  }
+  .section-title .title {
+    font-size: 18px;
+  }
+  .post-slider .owl-nav button {
+    margin-left: 7px;
+    font-size: 14px;
+  }
+  .post-slider .owl-nav {
+    top: -60px;
+  }
+  .banner-inner .banner-details .post-meta-single {
+    margin-bottom: 19px;
+  }
+  .banner-inner .banner-details h2 {
+    font-size: 28px;
+  }
+  .banner-inner .banner-details p {
+    margin-top: 13px;
+  }
+  .banner-inner .banner-details .btn {
+    margin-top: 14px;
+  }
+  .banner-inner .banner-details .post-meta-single li .tag-base {
+    font-size: 16px;
+    height: 38px;
+    line-height: 38px;
+    padding: 0 12px;
+  }
+  .single-post-wrap .thumb .btn-date {
+    height: 36px;
+    line-height: 38px;
+    font-size: 14px;
+  }
+  .trending-post.style-box {
+    padding: 15px 15px 15px;
+  }
+  .trending-post.style-box .single-post-list-wrap .media img {
+    width: 55px;
+  }
+  .trending-post.style-box .single-post-list-wrap .title {
+    font-size: 12px;
+  }
+  .single-post-list-wrap .media .details {
+    margin-top: -9px;
+  }
+  .single-post-list-wrap .media .media-body .post-meta-single ul li {
+    font-size: 11px;
+  }
+  .single-post-wrap.style-overlay .details .title {
+    font-size: 16px;
+  }
+  .single-post-wrap .details h6 {
+    font-size: 16px;
+  }
+  .social-area-2 li {
+    margin: 0 2px;
+  }
+  .banner-post-area .single-post-list-wrap .title {
+    font-size: 13px;
+  }
+  .single-post-wrap.style-box .details {
+    padding: 15px;
+  }
+  .single-post-wrap .spw-bottom ul li p {
+    font-size: 12px;
+  }
+}
+
+/* header */
+p {
+  font-size: 18px;
+}
+img {
+  max-width: 100%;
+}
+.section-one {
+  background: #e8eefc;
+}
+
+.section-one .topbar-area {
+  background: #01d8e9;
+  padding: 18px 0;
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
+}
+.section-one .container-1 {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  flex-wrap: nowrap;
+  max-width: 1240px;
+  margin: 0 auto;
+}
+.section-one .topbar-left {
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+.section-one .topbar-right {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.topbar-menu {
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
+}
+.topbar-menu h1 {
+  display: inline-block;
+  margin-right: 12px;
+  white-space: nowrap;
+}
+.topbar-menu ul {
+  padding: 0;
+  margin: 0;
+  display: inline-flex;
+  align-items: center;
+  flex-wrap: nowrap;
+}
+.topbar-menu ul li {
+  display: inline-block;
+  margin: 0 8px;
+  white-space: nowrap;
+}
+.topbar-area .topbar-menu ul li a {
+  font-size: 14px;
+  color: black;
+}
+.topbar-area .topbar-menu ul li a:hover {
+  color: var(--main-color);
+}
+.topbar-area .topbar-menu ul li:first-child {
+  margin-left: 0;
+}
+.topbar-area .topbar-menu ul li:last-child {
+  margin-right: 0;
+}
+.topbar-area .topbar-date {
+  display: inline-block;
+  /* color: rgba(255, 255, 255, 0.8); */
+  font-size: 14px;
+  border-right: 1px solid #495d7a;
+  padding-right: 20px;
+  margin-right: 17px;
+}
+.topbar-area .topbar-date i {
+  margin-right: 6px;
+}
+
+/********** banner style ************/
+.banner-inner {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+.container-2 {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  flex-wrap: nowrap;
+  max-width: 1240px;
+  margin: 0 auto;
+}
+.banner-inner .banner-details p {
+  color: black;
+  margin-top: 27px;
+}
+.banner-inner .banner-details h2 {
+  font-weight: 500;
+}
+.banner-inner .banner-details .time {
+  font-size: 15px;
+  margin-top: 0px;
+  color: #666666;
+}
+.banner-inner .banner-details .btn-1 {
+  height: 48px;
+  line-height: 48px;
+  padding: 0px 35px;
+  overflow: hidden;
+  position: relative;
+  border: 0px;
+  transition: 0.5s;
+  font-weight: 500;
+  font-size: 16px;
+  display: inline-block;
+  transform: perspective(1px) translateZ(0px);
+  border-radius: 5px;
+}
+
+.banner-inner .banner-details .btn-blue {
+  background: #283f62;
+  color: #fff;
+  border: 0;
+}
+.banner-inner .banner-details .btn-blue:hover {
+  background: #3b5998;
+}
+/*---------------------------------------
+    ## Single Post Wrap
+---------------------------------------*/
+.single-post-wrap {
+  position: relative;
+  margin-bottom: 30px;
+  transition: 0.4s;
+}
+.single-post-wrap .thumb {
+  position: relative;
+  margin-bottom: 27px;
+  overflow: hidden;
+  border-radius: 5px;
+}
+.single-post-wrap .thumb img {
+  transition: 0.8s;
+  transform: scale(1.01);
+}
+.single-post-wrap .details .title {
+  margin-bottom: 0;
+}
+.single-post-wrap .details p {
+  margin-bottom: 0;
+  margin-top: 16px;
+}
+.single-post-wrap .details .time {
+  font-size: 15px;
+  margin-top: 5px;
+}
+.single-post-wrap:hover .thumb img {
+  transform: scale(1.06);
+}
+
+/* Thêm kiểu cho section mới (news-section) */
+.section-two {
+  background-color: #ffffff;
+  max-width: 1240px;
+  margin: 20px auto;
+}
+.news-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding-bottom: 20px;
+  position: relative;
+}
+.news-item {
+  flex: 0 0 calc(50% - 10px);
+  min-width: 300px;
+  display: flex;
+  background-color: #ffffff;
+  border-radius: 5px;
+  overflow: hidden;
+}
+.news-item img {
+  width: 200px; /* Điều chỉnh kích thước theo nhu cầu */
+  height: 150px;
+  object-fit: cover; /* Đảm bảo hình ảnh tỷ lệ tốt */
+}
+.news-content {
+  padding-left: 15px;
+  width: 60%;
+}
+.news-content h3 {
+  font-size: 20px;
+  color: #333;
+  margin-bottom: 10px;
+}
+.news-content p {
+  font-size: 14px;
+  color: #666;
+  line-height: 1.5;
+}
+.news-content .news-meta {
+  font-size: 12px;
+  color: #888;
+  margin-top: 10px;
+}
+@media (max-width: 768px) {
+  .news-container {
+    flex-direction: column;
+  }
+  .news-item {
+    flex-direction: column;
+    width: 100%;
+  }
+  .news-item img {
+    width: 100%;
+    height: 200px;
+  }
+  .news-content {
+    width: 100%;
+  }
+}
